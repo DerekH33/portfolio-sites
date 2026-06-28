@@ -2,20 +2,343 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>作品集</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Derek · 軟體工程師</title>
+  <meta name="description" content="軟體工程師，具備企業級系統開發經驗，現接受網站與系統接案。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    body { font-family: sans-serif; max-width: 600px; margin: 60px auto; padding: 2rem; }
-    h1 { font-size: 1.5rem; margin-bottom: 2rem; }
-    a { display: block; padding: 1rem 1.5rem; margin-bottom: 1rem;
-        border: 1px solid #ddd; text-decoration: none; color: #333;
-        border-radius: 6px; }
-    a:hover { background: #f5f5f5; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #111111;
+      --gray:    #666666;
+      --light:   #f7f7f7;
+      --border:  #e0e0e0;
+      --white:   #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans TC', 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.7;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ── */
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .nav-link {
+      font-size: 0.8rem;
+      color: var(--gray);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover { color: var(--black); }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 6rem 0 5rem;
+    }
+
+    .hero-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 400;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      margin-bottom: 2rem;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--gray);
+      max-width: 520px;
+      line-height: 1.9;
+    }
+
+    .hero-desc + .hero-desc {
+      margin-top: 1rem;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Section ── */
+    section { padding: 4.5rem 0; }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── About ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    @media (max-width: 560px) {
+      .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+
+    .about-item h3 {
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.02em;
+    }
+
+    .about-item p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.85;
+    }
+
+    /* ── Works ── */
+    .works-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .work-item {
+      border-top: 1px solid var(--border);
+    }
+
+    .work-item:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .work-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.6rem 0;
+      text-decoration: none;
+      color: var(--black);
+      gap: 1rem;
+      transition: opacity 0.2s;
+    }
+
+    .work-link:hover { opacity: 0.55; }
+
+    .work-name {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .work-tag {
+      font-size: 0.75rem;
+      color: var(--gray);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .work-arrow {
+      font-size: 1rem;
+      color: var(--gray);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    .work-link:hover .work-arrow { transform: translateX(4px); }
+
+    /* ── CTA ── */
+    .cta {
+      background: var(--black);
+      color: var(--white);
+      padding: 4.5rem 0;
+    }
+
+    .cta .section-label { color: rgba(255,255,255,0.45); }
+
+    .cta h2 {
+      font-size: clamp(1.4rem, 3.5vw, 1.875rem);
+      font-weight: 400;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 0.85rem 2rem;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .cta-btn:hover {
+      background: var(--white);
+      color: var(--black);
+      border-color: var(--white);
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--gray);
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 480px) {
+      footer .wrap { flex-direction: column; gap: 0.5rem; }
+    }
   </style>
 </head>
 <body>
-  <h1>Portfolio</h1>
-  <a href="mu-roaster.html">Mu Roaster</a>
-  <a href="brocade-coffee.html">Brocade Coffee</a>
-  <a href="hao-coffee.html">Hao Coffee</a>
+
+  <header>
+    <div class="wrap">
+      <a href="#" class="logo">Derek</a>
+      <a href="#contact" class="nav-link">聯絡我 →</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero">
+        <p class="hero-label">Software Engineer</p>
+        <h1>軟體工程師<br>從企業系統到接案開發</h1>
+        <p class="hero-desc">
+          曾在公司參與大型系統的設計與開發，累積從需求分析、架構規劃到上線維運的完整經驗。
+        </p>
+        <p class="hero-desc">
+          現在開始接受接案，為品牌與小型企業打造乾淨、好用、能真正運作的數位產品。
+        </p>
+      </section>
+    </div>
+
+    <hr class="divider">
+
+    <div class="wrap">
+      <section id="about">
+        <p class="section-label">About</p>
+        <div class="about-grid">
+          <div class="about-item">
+            <h3>企業級開發經驗</h3>
+            <p>參與過內部管理系統、資料流程與 API 整合，熟悉在真實商業環境中交付穩定可靠的軟體。</p>
+          </div>
+          <div class="about-item">
+            <h3>接案服務項目</h3>
+            <p>品牌官網、Landing Page、後台系統、功能原型開發。注重程式品質、效能與長期可維護性。</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <hr class="divider">
+
+    <div class="wrap">
+      <section id="works">
+        <p class="section-label">Selected Works</p>
+        <ul class="works-list">
+          <li class="work-item">
+            <a href="rode-beauty.html" class="work-link">
+              <span class="work-name">RODE BEAUTY · 護膚美髮</span>
+              <span class="work-tag">品牌官網</span>
+              <span class="work-arrow">→</span>
+            </a>
+          </li>
+          <li class="work-item">
+            <a href="mu-roaster.html" class="work-link">
+              <span class="work-name">Mu Roaster · 沐元素咖啡</span>
+              <span class="work-tag">品牌官網</span>
+              <span class="work-arrow">→</span>
+            </a>
+          </li>
+          <li class="work-item">
+            <a href="brocade-coffee.html" class="work-link">
+              <span class="work-name">Brocade Coffee · 錦院咖啡</span>
+              <span class="work-tag">品牌官網</span>
+              <span class="work-arrow">→</span>
+            </a>
+          </li>
+          <li class="work-item">
+            <a href="hao-coffee.html" class="work-link">
+              <span class="work-name">Hao Coffee · 豪咖啡</span>
+              <span class="work-tag">品牌官網</span>
+              <span class="work-arrow">→</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="cta" id="contact">
+      <div class="wrap">
+        <p class="section-label">Contact</p>
+        <h2>有專案想法？<br>歡迎與我聊聊。</h2>
+        <a href="mailto:your@email.com" class="cta-btn">寄信給我</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Derek</span>
+      <span>Software Engineer · Available for freelance</span>
+    </div>
+  </footer>
+
 </body>
 </html>
