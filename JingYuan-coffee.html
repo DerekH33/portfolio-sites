@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>錦院咖啡 Brocade Coffee | 台北松山精品咖啡・絲綢般滑順細緻</title>
+  <meta name="description" content="錦院咖啡，位於台北市松山區八德路三段74巷，提供精品手沖咖啡、義式咖啡與精緻輕食。如絲綢般滑順細緻優雅的咖啡體驗，Google 4.5星好評。">
+  <meta name="keywords" content="錦院咖啡,Brocade Coffee,台北咖啡廳,松山區咖啡,八德路咖啡,精品咖啡,手沖咖啡,帕里尼,輕食咖啡廳">
+  <meta property="og:title" content="錦院咖啡 Brocade Coffee">
+  <meta property="og:description" content="如絲綢般滑順細緻優雅的精品咖啡體驗，台北松山區八德路三段">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <link rel="canonical" href="https://brocade-coffee.com/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "錦院咖啡",
+    "alternateName": "Brocade Coffee",
+    "description": "如絲綢般滑順細緻優雅的精品咖啡，提供手沖單品、義式咖啡與精緻輕食",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "八德路三段74巷2號",
+      "addressLocality": "松山區",
+      "addressRegion": "台北市",
+      "postalCode": "105",
+      "addressCountry": "TW"
+    },
+    "telephone": "+886-2-2577-7790",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "reviewCount": "140"
+    },
+    "openingHours": "Mo-Su 08:00-",
+    "priceRange": "$1-200",
+    "sameAs": [
+      "https://www.instagram.com/brocade_coffee_/"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:      #0E0C0A;
+      --crimson:  #7A2E20;
+      --crimson2: #A03C2A;
+      --gold:     #B8965A;
+      --cream:    #F5F0E8;
+      --warm:     #EDE4D6;
+      --stone:    #8A7A6A;
+      --text:     #2A1E18;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'Noto Sans TC', 'PingFang TC', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 5vw;
+      transition: background 0.4s, border-color 0.4s;
+    }
+
+    nav.scrolled {
+      background: rgba(14,12,10,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(184,150,90,0.15);
+    }
+
+    .nav-logo {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-logo-zh {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.18em;
+      line-height: 1.2;
+    }
+
+    .nav-logo-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 0.3em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.8rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── HERO — VIDEO BG ── */
+    #hero {
+      position: relative;
+      height: 100svh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--ink);
+    }
+
+    .hero-video-wrap {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Scale the reel (267×476 ratio) to cover the viewport */
+    .hero-video-wrap iframe {
+      /* Make it large enough to fill any viewport */
+      width: max(100vw, calc(100vh * 267 / 476));
+      height: max(100vh, calc(100vw * 476 / 267));
+      min-width: 100%;
+      min-height: 100%;
+      border: none;
+      pointer-events: none;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(14,12,10,0.55) 0%,
+        rgba(14,12,10,0.3) 40%,
+        rgba(14,12,10,0.55) 75%,
+        rgba(14,12,10,0.9) 100%
+      );
+    }
+
+    /* Silk texture overlay */
+    .hero-overlay::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        rgba(184,150,90,0.03) 2px,
+        rgba(184,150,90,0.03) 4px
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero-line {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 2rem;
+      opacity: 0;
+      animation: fade-in 1s ease forwards 0.3s;
+    }
+
+    .hero-zh {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(3.5rem, 10vw, 8rem);
+      font-weight: 300;
+      color: #fff;
+      letter-spacing: 0.25em;
+      line-height: 1;
+      opacity: 0;
+      animation: fade-in 1.2s ease forwards 0.5s;
+    }
+
+    .hero-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 3vw, 2rem);
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 0.4em;
+      margin-top: 0.8rem;
+      opacity: 0;
+      animation: fade-in 1.2s ease forwards 0.8s;
+    }
+
+    .hero-tagline {
+      margin-top: 2rem;
+      font-size: clamp(0.8rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.25em;
+      opacity: 0;
+      animation: fade-in 1.2s ease forwards 1.1s;
+    }
+
+    .hero-cta-wrap {
+      margin-top: 3.5rem;
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fade-in 1.2s ease forwards 1.4s;
+    }
+
+    .btn-outline {
+      padding: 0.9rem 2.6rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.2em;
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .btn-solid {
+      padding: 0.9rem 2.6rem;
+      background: var(--crimson);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.2em;
+      border: 1px solid var(--crimson);
+      transition: all 0.3s;
+    }
+
+    .btn-solid:hover {
+      background: var(--crimson2);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fade-in 1s ease forwards 2s;
+    }
+
+    .scroll-hint span {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .scroll-line {
+      width: 1px; height: 44px;
+      background: linear-gradient(to bottom, rgba(184,150,90,0.7), transparent);
+      animation: scroll-drop 2s ease-in-out infinite;
+    }
+
+    @keyframes scroll-drop {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: top; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SECTION UTILITIES ── */
+    section { padding: 9rem 7vw; }
+
+    .section-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--gold);
+      letter-spacing: 0.35em;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.25;
+      letter-spacing: 0.06em;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.85s ease, transform 0.85s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--ink);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8vw;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    /* Brocade pattern SVG */
+    .brocade-frame {
+      width: 100%;
+      aspect-ratio: 3/4;
+      position: relative;
+    }
+
+    .about-text .section-title { color: var(--cream); }
+    .about-text .section-eyebrow { color: var(--gold); }
+
+    .about-text p {
+      margin-top: 1.8rem;
+      font-size: 1.05rem;
+      color: rgba(245,240,232,0.65);
+      line-height: 2;
+    }
+
+    .about-stat-row {
+      display: flex;
+      gap: 3rem;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(184,150,90,0.2);
+    }
+
+    .about-stat strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .about-stat span {
+      font-size: 0.78rem;
+      color: var(--stone);
+      letter-spacing: 0.12em;
+    }
+
+    /* ── MENU ── */
+    #menu {
+      background: var(--warm);
+      overflow: hidden;
+    }
+
+    .menu-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3.5rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .menu-scroll-track {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      padding-bottom: 1.5rem;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(122,46,32,0.3) transparent;
+      cursor: grab;
+    }
+
+    .menu-scroll-track:active { cursor: grabbing; }
+
+    .menu-scroll-track::-webkit-scrollbar { height: 3px; }
+    .menu-scroll-track::-webkit-scrollbar-track { background: transparent; }
+    .menu-scroll-track::-webkit-scrollbar-thumb { background: rgba(122,46,32,0.3); border-radius: 2px; }
+
+    .menu-card {
+      flex: 0 0 260px;
+      background: var(--cream);
+      padding: 2.2rem 2rem;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(14,12,10,0.12);
+    }
+
+    .menu-card-badge {
+      position: absolute;
+      top: 1.2rem; right: 1.2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.68rem;
+      color: var(--crimson);
+      letter-spacing: 0.15em;
+    }
+
+    .menu-cat {
+      font-size: 0.72rem;
+      color: var(--stone);
+      letter-spacing: 0.18em;
+      margin-bottom: 0.7rem;
+    }
+
+    .menu-name {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    .menu-name-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.82rem;
+      color: var(--stone);
+      margin-top: 0.3rem;
+    }
+
+    .menu-desc {
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      color: #6A5A4A;
+      line-height: 1.8;
+    }
+
+    .menu-price {
+      margin-top: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--crimson);
+    }
+
+    .menu-price small {
+      font-size: 0.7rem;
+      color: var(--stone);
+      margin-left: 0.2rem;
+    }
+
+    /* ── SPECIALTIES ── */
+    #specialty {
+      background: var(--cream);
+    }
+
+    .specialty-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      margin-top: 4rem;
+    }
+
+    .specialty-item {
+      background: var(--warm);
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .specialty-item::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--crimson);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .specialty-item:hover::before { transform: scaleX(1); }
+    .specialty-item:hover { background: #e5ddd0; }
+
+    .specialty-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      font-weight: 300;
+      color: rgba(122,46,32,0.08);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .specialty-name {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .specialty-desc {
+      font-size: 0.88rem;
+      color: var(--stone);
+      line-height: 1.9;
+    }
+
+    /* ── INFO ── */
+    #info {
+      background: var(--ink);
+    }
+
+    #info .section-title { color: var(--cream); }
+    #info .section-eyebrow { color: var(--gold); }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6vw;
+      margin-top: 4rem;
+    }
+
+    .info-block h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      border-bottom: 1px solid rgba(184,150,90,0.2);
+      padding-bottom: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-row {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+      font-size: 0.92rem;
+    }
+
+    .info-label {
+      min-width: 68px;
+      color: var(--stone);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+    }
+
+    .info-val { color: rgba(245,240,232,0.8); }
+
+    .rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 2rem;
+      padding: 0.9rem 1.5rem;
+      border: 1px solid rgba(184,150,90,0.25);
+    }
+
+    .rating-score {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .rating-stars { color: var(--gold); font-size: 0.85rem; }
+    .rating-count { font-size: 0.75rem; color: var(--stone); }
+
+    .social-wrap {
+      margin-top: 2.5rem;
+    }
+
+    .social-wrap a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: rgba(245,240,232,0.5);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      transition: color 0.2s;
+      margin-right: 1.5rem;
+    }
+
+    .social-wrap a:hover { color: var(--gold); }
+
+    .social-ico {
+      width: 38px; height: 38px;
+      border: 1px solid rgba(184,150,90,0.3);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+
+    .map-note {
+      margin-top: 1.5rem;
+      padding: 1.4rem 1.6rem;
+      background: rgba(255,255,255,0.04);
+      border-left: 2px solid var(--crimson);
+      font-size: 0.88rem;
+      color: rgba(245,240,232,0.55);
+      line-height: 1.8;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #070503;
+      padding: 2.5rem 7vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.92rem;
+      color: rgba(245,240,232,0.35);
+      letter-spacing: 0.2em;
+    }
+
+    .footer-note {
+      font-size: 0.75rem;
+      color: rgba(245,240,232,0.18);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      #about {
+        grid-template-columns: 1fr;
+        padding: 6rem 6vw;
+      }
+
+      .about-visual { display: none; }
+      .about-stat-row { gap: 2rem; }
+
+      .specialty-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+
+      .nav-links { display: none; }
+      section { padding: 6rem 6vw; }
+    }
+
+    @media (min-width: 769px) {
+      .section-eyebrow   { font-size: 1rem; }
+      .menu-cat          { font-size: 0.85rem; }
+      .menu-desc         { font-size: 0.95rem; }
+      .specialty-desc    { font-size: 0.95rem; }
+      .info-row          { font-size: 1rem; }
+      .info-label        { font-size: 0.9rem; }
+      .map-note          { font-size: 0.95rem; }
+      .social-wrap a     { font-size: 0.92rem; }
+      .menu-name-en      { font-size: 0.9rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-line { animation: none; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <span class="nav-logo-zh">錦院咖啡</span>
+    <span class="nav-logo-en">Brocade Coffee</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">品牌故事</a></li>
+    <li><a href="#menu">精選菜單</a></li>
+    <li><a href="#specialty">特色亮點</a></li>
+    <li><a href="#info">來訪資訊</a></li>
+  </ul>
+</nav>
+
+<!-- HERO — VIDEO BACKGROUND -->
+<section id="hero" aria-label="首頁主視覺">
+  <div class="hero-video-wrap" aria-hidden="true">
+    <iframe
+      src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F284110234510804%2F&show_text=false&width=267&t=0&autoplay=1&mute=1"
+      scrolling="no"
+      frameborder="0"
+      allowfullscreen="true"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      title="錦院咖啡形象影片">
+    </iframe>
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-line"></div>
+    <h1 class="hero-zh">錦院咖啡</h1>
+    <p class="hero-en">Brocade Coffee</p>
+    <p class="hero-tagline">如絲綢般滑順 &ensp;·&ensp; 細緻 &ensp;·&ensp; 優雅</p>
+    <div class="hero-cta-wrap">
+      <a href="#menu" class="btn-outline">瀏覽菜單</a>
+      <a href="#info" class="btn-solid">立即前往</a>
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-title">
+  <div class="about-visual reveal" aria-hidden="true">
+    <!-- Brocade / silk pattern decorative SVG -->
+    <svg class="brocade-frame" viewBox="0 0 400 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bgGlow" cx="50%" cy="40%" r="55%">
+          <stop offset="0%" stop-color="#3A1A10" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#0E0C0A" stop-opacity="1"/>
+        </radialGradient>
+        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#DFB870"/>
+          <stop offset="50%" stop-color="#B8965A"/>
+          <stop offset="100%" stop-color="#8A6A35"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Background -->
+      <rect width="400" height="540" fill="url(#bgGlow)" rx="2"/>
+
+      <!-- Outer brocade frame -->
+      <rect x="20" y="20" width="360" height="500" stroke="url(#goldGrad)" stroke-width="0.8" fill="none" rx="1"/>
+      <rect x="28" y="28" width="344" height="484" stroke="rgba(184,150,90,0.3)" stroke-width="0.5" fill="none"/>
+
+      <!-- Corner ornaments -->
+      <!-- TL -->
+      <path d="M20 50 L20 20 L50 20" stroke="url(#goldGrad)" stroke-width="1.5" fill="none"/>
+      <circle cx="20" cy="20" r="3" fill="url(#goldGrad)"/>
+      <!-- TR -->
+      <path d="M380 50 L380 20 L350 20" stroke="url(#goldGrad)" stroke-width="1.5" fill="none"/>
+      <circle cx="380" cy="20" r="3" fill="url(#goldGrad)"/>
+      <!-- BL -->
+      <path d="M20 490 L20 520 L50 520" stroke="url(#goldGrad)" stroke-width="1.5" fill="none"/>
+      <circle cx="20" cy="520" r="3" fill="url(#goldGrad)"/>
+      <!-- BR -->
+      <path d="M380 490 L380 520 L350 520" stroke="url(#goldGrad)" stroke-width="1.5" fill="none"/>
+      <circle cx="380" cy="520" r="3" fill="url(#goldGrad)"/>
+
+      <!-- Center floral medallion -->
+      <!-- Outer ring -->
+      <circle cx="200" cy="240" r="90" stroke="rgba(184,150,90,0.25)" stroke-width="0.8" fill="none"/>
+      <circle cx="200" cy="240" r="75" stroke="rgba(184,150,90,0.4)" stroke-width="0.5" fill="none"/>
+
+      <!-- 8 petals -->
+      <g transform="translate(200,240)">
+        <ellipse cx="0" cy="-55" rx="12" ry="26" fill="rgba(122,46,32,0.5)" transform="rotate(0)"/>
+        <ellipse cx="0" cy="-55" rx="12" ry="26" fill="rgba(122,46,32,0.5)" transform="rotate(45)"/>
+        <ellipse cx="0" cy="-55" rx="12" ry="26" fill="rgba(122,46,32,0.5)" transform="rotate(90)"/>
+        <ellipse cx="0" cy="-55" rx="12" ry="26" fill="rgba(122,46,32,0.5)" transform="rotate(135)"/>
+        <ellipse cx="0" cy="-55" rx="12" ry="26" fill="rgba(122,46,32,0.5)" transform="rotate(180)"/>
+        <ellipse cx="0" cy="-55" rx="12" ry="26" fill="rgba(122,46,32,0.5)" transform="rotate(225)"/>
+        <ellipse cx="0" cy="-55" rx="12" ry="26" fill="rgba(122,46,32,0.5)" transform="rotate(270)"/>
+        <ellipse cx="0" cy="-55" rx="12" ry="26" fill="rgba(122,46,32,0.5)" transform="rotate(315)"/>
+
+        <!-- Inner petal outlines -->
+        <ellipse cx="0" cy="-55" rx="10" ry="24" stroke="url(#goldGrad)" stroke-width="0.6" fill="none" transform="rotate(0)"/>
+        <ellipse cx="0" cy="-55" rx="10" ry="24" stroke="url(#goldGrad)" stroke-width="0.6" fill="none" transform="rotate(45)"/>
+        <ellipse cx="0" cy="-55" rx="10" ry="24" stroke="url(#goldGrad)" stroke-width="0.6" fill="none" transform="rotate(90)"/>
+        <ellipse cx="0" cy="-55" rx="10" ry="24" stroke="url(#goldGrad)" stroke-width="0.6" fill="none" transform="rotate(135)"/>
+        <ellipse cx="0" cy="-55" rx="10" ry="24" stroke="url(#goldGrad)" stroke-width="0.6" fill="none" transform="rotate(180)"/>
+        <ellipse cx="0" cy="-55" rx="10" ry="24" stroke="url(#goldGrad)" stroke-width="0.6" fill="none" transform="rotate(225)"/>
+        <ellipse cx="0" cy="-55" rx="10" ry="24" stroke="url(#goldGrad)" stroke-width="0.6" fill="none" transform="rotate(270)"/>
+        <ellipse cx="0" cy="-55" rx="10" ry="24" stroke="url(#goldGrad)" stroke-width="0.6" fill="none" transform="rotate(315)"/>
+
+        <!-- Center circle -->
+        <circle r="22" fill="#1A0E08" stroke="url(#goldGrad)" stroke-width="1"/>
+        <circle r="15" fill="none" stroke="rgba(184,150,90,0.5)" stroke-width="0.5"/>
+        <circle r="6" fill="url(#goldGrad)"/>
+      </g>
+
+      <!-- 4 small corner medallions -->
+      <g transform="translate(80,90)">
+        <circle r="16" fill="rgba(122,46,32,0.3)" stroke="rgba(184,150,90,0.4)" stroke-width="0.6"/>
+        <circle r="7" fill="rgba(184,150,90,0.6)"/>
+      </g>
+      <g transform="translate(320,90)">
+        <circle r="16" fill="rgba(122,46,32,0.3)" stroke="rgba(184,150,90,0.4)" stroke-width="0.6"/>
+        <circle r="7" fill="rgba(184,150,90,0.6)"/>
+      </g>
+      <g transform="translate(80,390)">
+        <circle r="16" fill="rgba(122,46,32,0.3)" stroke="rgba(184,150,90,0.4)" stroke-width="0.6"/>
+        <circle r="7" fill="rgba(184,150,90,0.6)"/>
+      </g>
+      <g transform="translate(320,390)">
+        <circle r="16" fill="rgba(122,46,32,0.3)" stroke="rgba(184,150,90,0.4)" stroke-width="0.6"/>
+        <circle r="7" fill="rgba(184,150,90,0.6)"/>
+      </g>
+
+      <!-- Silk wave lines -->
+      <path d="M44 455 Q100 440 160 455 Q220 470 280 455 Q340 440 356 455" stroke="rgba(184,150,90,0.2)" stroke-width="0.8" fill="none"/>
+      <path d="M44 463 Q100 448 160 463 Q220 478 280 463 Q340 448 356 463" stroke="rgba(184,150,90,0.12)" stroke-width="0.6" fill="none"/>
+
+      <!-- Brand text -->
+      <text x="200" y="485" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-style="italic" font-size="14" fill="rgba(184,150,90,0.55)" letter-spacing="4">Brocade Coffee</text>
+      <text x="200" y="506" text-anchor="middle" font-family="serif" font-size="11" fill="rgba(184,150,90,0.3)" letter-spacing="8">錦 院 咖 啡</text>
+    </svg>
+  </div>
+
+  <div class="about-text reveal">
+    <p class="section-eyebrow">Our Story</p>
+    <h2 class="section-title" id="about-title">一杯咖啡<br>如一匹細織的錦緞</h2>
+    <p>「錦院」取自「錦緞庭院」之意，我們相信每一杯好咖啡，都應如絲綢錦緞般——有層次、有溫度、入口滑順而餘韻綿長。</p>
+    <p>自 2017 年創立至今，錦院咖啡致力於提供高品質精品咖啡豆、義式咖啡飲品及精緻輕食，期待成為台北精品咖啡連鎖品牌的代名詞。</p>
+    <p>我們嚴選來自衣索比亞、瓜地馬拉、肯亞、哥斯大黎加等產區的優質豆款，由專業咖啡師以手沖或義式萃取，讓每一杯都呈現最完美的細緻風味。</p>
+    <div class="about-stat-row">
+      <div class="about-stat">
+        <strong>4.5</strong>
+        <span>Google 評分</span>
+      </div>
+      <div class="about-stat">
+        <strong>140+</strong>
+        <span>顧客評論</span>
+      </div>
+      <div class="about-stat">
+        <strong>2017</strong>
+        <span>創立年份</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" aria-labelledby="menu-title">
+  <div class="menu-header reveal">
+    <div>
+      <p class="section-eyebrow">Our Menu</p>
+      <h2 class="section-title" id="menu-title">精選菜單</h2>
+    </div>
+    <p style="font-size:0.9rem;color:var(--stone);max-width:240px;line-height:1.8;">左右滑動瀏覽更多品項，完整菜單可至 foodpanda 查閱。</p>
+  </div>
+
+  <div class="menu-scroll-track reveal">
+
+    <div class="menu-card">
+      <span class="menu-card-badge">人氣 No.1</span>
+      <p class="menu-cat">義式咖啡 · Espresso</p>
+      <h3 class="menu-name">拿鐵</h3>
+      <p class="menu-name-en">Caffè Latte</p>
+      <p class="menu-desc">嚴選義式配方豆，細緻奶泡與濃縮咖啡完美融合，滑順而不苦澀，是錦院最受歡迎的每日陪伴。</p>
+      <p class="menu-price">$125 <small>起 / M size</small></p>
+    </div>
+
+    <div class="menu-card">
+      <p class="menu-cat">精品手沖 · Pour Over</p>
+      <h3 class="menu-name">淺焙水洗<br>衣索比亞</h3>
+      <p class="menu-name-en">Ethiopia Washed Light Roast</p>
+      <p class="menu-desc">非洲產區的花果清香，水洗處理帶出明亮酸質，滑順茶感中有著茉莉與佛手柑的迷人餘韻。</p>
+      <p class="menu-price">$194 <small>/ M 250ml</small></p>
+    </div>
+
+    <div class="menu-card">
+      <p class="menu-cat">精品手沖 · Pour Over</p>
+      <h3 class="menu-name">淺焙水洗<br>瓜地馬拉花神</h3>
+      <p class="menu-name-en">Guatemala Huehuetenango Washed</p>
+      <p class="menu-desc">中美洲高海拔莊園精品，「花神」是瓜地馬拉的代表性品種，帶有柑橘、太妃糖的均衡風味。</p>
+      <p class="menu-price">$194 <small>/ M 250ml</small></p>
+    </div>
+
+    <div class="menu-card">
+      <p class="menu-cat">精品手沖 · Pour Over</p>
+      <h3 class="menu-name">深焙水洗<br>曼特寧</h3>
+      <p class="menu-name-en">Sumatra Mandheling Dark Roast</p>
+      <p class="menu-desc">印尼蘇門答臘的厚實大地感，深烘帶出黑巧克力、香料與泥土氣息，是喜愛濃郁風味者的首選。</p>
+      <p class="menu-price">$194 <small>/ M 250ml</small></p>
+    </div>
+
+    <div class="menu-card">
+      <p class="menu-cat">精品手沖 · Pour Over</p>
+      <h3 class="menu-name">中焙蜜處理<br>哥斯大黎加</h3>
+      <p class="menu-name-en">Costa Rica Honey Process</p>
+      <p class="menu-desc">蜜處理保留果肉甜感，中焙保留細緻香氣，帶有紅糖、蜂蜜與熱帶水果的豐富層次。</p>
+      <p class="menu-price">$194 <small>/ M 250ml</small></p>
+    </div>
+
+    <div class="menu-card">
+      <span class="menu-card-badge">主廚推薦</span>
+      <p class="menu-cat">精緻輕食 · Light Bites</p>
+      <h3 class="menu-name">煙燻牛肉起司<br>帕里尼</h3>
+      <p class="menu-name-en">Smoked Beef Cheese Panini</p>
+      <p class="menu-desc">烤至酥脆的帕里尼麵包，夾入煙燻牛肉、融化起司、酸黃瓜與番茄，是咖啡最完美的餐食搭配。</p>
+      <p class="menu-price">$202 <small>起</small></p>
+    </div>
+
+    <div class="menu-card">
+      <p class="menu-cat">天堂鳥手沖 · Specialty</p>
+      <h3 class="menu-name">中焙水洗<br>巴紐天堂鳥</h3>
+      <p class="menu-name-en">Papua New Guinea Bird of Paradise</p>
+      <p class="menu-desc">來自巴布亞紐幾內亞的珍稀豆款，以「天堂鳥」命名，風味奔放，帶有熱帶水果與榛果的複雜層次。</p>
+      <p class="menu-price">$194 <small>/ M 250ml</small></p>
+    </div>
+
+    <div class="menu-card">
+      <p class="menu-cat">義式咖啡 · Espresso</p>
+      <h3 class="menu-name">美式黑咖啡</h3>
+      <p class="menu-name-en">Americano</p>
+      <p class="menu-desc">嚴選咖啡豆香氣風味均衡，讓您品嚐最純粹的咖啡風味，簡單而不簡單，每天的好開始。</p>
+      <p class="menu-price">$98 <small>起 / M size</small></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SPECIALTY -->
+<section id="specialty" aria-labelledby="specialty-title">
+  <div class="reveal">
+    <p class="section-eyebrow">Why Brocade</p>
+    <h2 class="section-title" id="specialty-title">為什麼選擇錦院</h2>
+  </div>
+
+  <div class="specialty-grid">
+    <article class="specialty-item reveal">
+      <div class="specialty-num">01</div>
+      <h3 class="specialty-name">精品豆款嚴格把關</h3>
+      <p class="specialty-desc">精選衣索比亞、瓜地馬拉、肯亞、哥斯大黎加、巴布亞紐幾內亞等多國莊園精品豆，確保每一支豆款都有完整的產地溯源與風味輪廓。</p>
+    </article>
+
+    <article class="specialty-item reveal">
+      <div class="specialty-num">02</div>
+      <h3 class="specialty-name">手沖 × 義式雙線並行</h3>
+      <p class="specialty-desc">提供 9 款精品手沖單品與超過 20 款義式咖啡選擇，無論你偏好手沖茶感的細膩，或義式奶香的醇厚，都能在錦院找到屬於你的那一杯。</p>
+    </article>
+
+    <article class="specialty-item reveal">
+      <div class="specialty-num">03</div>
+      <h3 class="specialty-name">精緻輕食完整配餐</h3>
+      <p class="specialty-desc">帕里尼、潛艇堡、熱壓吐司、披薩吐司、三明治等多元輕食選項，讓一杯好咖啡不孤單，無論早午餐或下午茶都是最佳選擇。</p>
+    </article>
+
+    <article class="specialty-item reveal">
+      <div class="specialty-num">04</div>
+      <h3 class="specialty-name">外送服務隨時享用</h3>
+      <p class="specialty-desc">透過 foodpanda 即可外送到府，辦公室聚餐或居家咖啡時光，輸入地址即可享受如絲綢般順滑的咖啡體驗，不必出門也能喝到好咖啡。</p>
+    </article>
+
+    <article class="specialty-item reveal">
+      <div class="specialty-num">05</div>
+      <h3 class="specialty-name">Google 4.5 星好評</h3>
+      <p class="specialty-desc">超過 140 則 Google 評論，顧客一致好評咖啡品質與服務態度。「和水果香，對很少喝手沖的我來說是一大發現」——來自真實顧客的回饋。</p>
+    </article>
+
+    <article class="specialty-item reveal">
+      <div class="specialty-num">06</div>
+      <h3 class="specialty-name">嚴選有機茶品</h3>
+      <p class="specialty-desc">不只咖啡，德國有機茶品與台灣嚴選茶系列一應俱全，提供更多元的選擇，讓不喝咖啡的朋友也能在錦院找到屬於自己的那一杯。</p>
+    </article>
+  </div>
+</section>
+
+<!-- INFO -->
+<section id="info" aria-labelledby="info-title">
+  <p class="section-eyebrow">Visit Us</p>
+  <h2 class="section-title" id="info-title">來訪資訊</h2>
+
+  <div class="info-grid">
+    <div class="info-block reveal">
+      <h3>店舖資訊</h3>
+      <div class="info-row">
+        <span class="info-label">地址</span>
+        <span class="info-val">台北市松山區八德路三段74巷2號</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">電話</span>
+        <span class="info-val"><a href="tel:+886225777790" style="color:inherit;text-decoration:none;">02-2577-7790</a></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">營業時間</span>
+        <span class="info-val">每日 08:00 起<br><small style="color:var(--stone);">建議來電確認公休日</small></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">消費金額</span>
+        <span class="info-val">$1 – 200 元</span>
+      </div>
+
+      <div class="rating-badge">
+        <div>
+          <div class="rating-score">4.5</div>
+          <div class="rating-stars">★★★★½</div>
+        </div>
+        <div>
+          <div style="font-size:0.75rem;color:var(--gold);letter-spacing:0.08em;">Google 評分</div>
+          <div class="rating-count">140+ 則評論</div>
+        </div>
+      </div>
+
+      <div class="map-note">
+        📍 位於台北松山區八德路三段，近小巨蛋商圈，建議搭乘捷運文湖線「南京復興站」或板南線「忠孝敦化站」步行前往，附近有停車場可停車。
+      </div>
+    </div>
+
+    <div class="info-block reveal">
+      <h3>線上訂餐 &amp; 社群</h3>
+      <p style="font-size:0.9rem;color:rgba(245,240,232,0.55);line-height:1.9;margin-bottom:1.5rem;">
+        透過 foodpanda 線上訂餐，外送到府享受錦院的精品咖啡與輕食。<br>
+        追蹤我們的 Instagram 掌握新品上架、限定優惠與咖啡知識分享。
+      </p>
+
+      <div class="social-wrap">
+        <a href="https://www.instagram.com/brocade_coffee_/" target="_blank" rel="noopener noreferrer" aria-label="錦院咖啡 Instagram">
+          <span class="social-ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+          @brocade_coffee_
+        </a>
+      </div>
+
+      <div style="margin-top:2.5rem;padding:1.8rem;border:1px solid rgba(184,150,90,0.15);">
+        <p style="font-size:0.75rem;color:var(--gold);letter-spacing:0.18em;margin-bottom:1rem;">ONLINE ORDER</p>
+        <p style="font-size:0.88rem;color:rgba(245,240,232,0.55);line-height:1.8;margin-bottom:1.2rem;">foodpanda 外送平台可線上訂購全品項，含精品手沖咖啡、義式咖啡、輕食餐點，首次訂購享免外送費優惠。</p>
+        <a href="https://www.foodpanda.com.tw/restaurant/vwgs/jin-yuan-ka-pei" target="_blank" rel="noopener noreferrer"
+           style="display:inline-block;padding:0.75rem 2rem;background:var(--crimson);color:#fff;text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;transition:background 0.3s;"
+           onmouseover="this.style.background='#A03C2A'"
+           onmouseout="this.style.background='var(--crimson)'">
+          前往外送訂購
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-logo">錦院咖啡 &ensp;·&ensp; Brocade Coffee</p>
+  <p class="footer-note">台北市松山區八德路三段74巷2號 &ensp;·&ensp; © 2025 Brocade Coffee</p>
+</footer>
+
+<script>
+  // Nav background on scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 90);
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => io.observe(el));
+
+  // Drag-to-scroll menu
+  const track = document.querySelector('.menu-scroll-track');
+  let isDown = false, startX, scrollLeft;
+  track.addEventListener('mousedown', e => {
+    isDown = true;
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  });
+  track.addEventListener('mouseleave', () => isDown = false);
+  track.addEventListener('mouseup', () => isDown = false);
+  track.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    track.scrollLeft = scrollLeft - (x - startX) * 1.2;
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>沐元素咖啡商行 Mu Roaster | 台北松山區自家烘焙精品咖啡</title>
+  <meta name="description" content="沐元素咖啡商行，位於台北市松山區八德路三段，專注自家烘焙手沖單品咖啡。精選哥倫比亞、衣索比亞等莊園豆，提供甜點下午茶，可接受外送預約。">
+  <meta name="keywords" content="沐元素咖啡,沐元素,Mu Roaster,台北咖啡廳,松山區咖啡,八德路咖啡,自家烘焙,手沖咖啡,精品咖啡,單品咖啡豆">
+  <meta property="og:title" content="沐元素咖啡商行 Mu Roaster">
+  <meta property="og:description" content="台北松山區自家烘焙精品咖啡，手沖單品咖啡 × 甜點下午茶">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <link rel="canonical" href="https://mu-roaster.com/">
+
+  <!-- Structured Data for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "沐元素咖啡商行",
+    "alternateName": "Mu Roaster",
+    "description": "台北松山區自家烘焙精品咖啡，專注手沖單品咖啡與精選莊園豆",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "八德路三段76號2樓43號位",
+      "addressLocality": "松山區",
+      "addressRegion": "台北市",
+      "postalCode": "105",
+      "addressCountry": "TW"
+    },
+    "telephone": "+886-963-438-812",
+    "openingHours": ["We-Fr 10:30-18:30", "Sa 10:30-17:00", "Su 10:30-14:30"],
+    "sameAs": [
+      "https://www.instagram.com/mu.roaster/",
+      "https://www.facebook.com/Mu.roaster/"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --espresso:  #2C1810;
+      --roast:     #4A2C1A;
+      --gold:      #C8974A;
+      --gold-light:#DFB87A;
+      --cream:     #F7F2EA;
+      --milk:      #FBF8F3;
+      --stone:     #9A8A7A;
+      --text:      #3A2A1E;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--milk);
+      color: var(--text);
+      font-family: 'Noto Sans TC', 'PingFang TC', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 4vw;
+      background: rgba(251,248,243,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200,151,74,0.15);
+      transition: background 0.3s;
+    }
+
+    .nav-logo {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--espresso);
+      letter-spacing: 0.12em;
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      margin-top: -2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      color: var(--stone);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--espresso); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      background: var(--espresso);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg-rings {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(200,151,74,0.12);
+      animation: pulse-ring 6s ease-in-out infinite;
+    }
+
+    .ring:nth-child(1) { width: 320px; height: 320px; animation-delay: 0s; }
+    .ring:nth-child(2) { width: 500px; height: 500px; animation-delay: 0.8s; }
+    .ring:nth-child(3) { width: 680px; height: 680px; animation-delay: 1.6s; }
+    .ring:nth-child(4) { width: 860px; height: 860px; animation-delay: 2.4s; border-color: rgba(200,151,74,0.06); }
+
+    @keyframes pulse-ring {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50%       { opacity: 1;   transform: scale(1.02); }
+    }
+
+    /* Coffee bean SVG animation */
+    .hero-bean {
+      position: absolute;
+      opacity: 0.06;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--gold);
+      letter-spacing: 0.3em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fade-up 1s ease forwards 0.3s;
+    }
+
+    .hero-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(3rem, 9vw, 7rem);
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.1;
+      letter-spacing: 0.06em;
+      opacity: 0;
+      animation: fade-up 1s ease forwards 0.6s;
+    }
+
+    .hero-title em {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.45em;
+      color: var(--gold-light);
+      letter-spacing: 0.2em;
+      margin-top: 0.4em;
+    }
+
+    .hero-sub {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: rgba(247,242,234,0.55);
+      letter-spacing: 0.15em;
+      opacity: 0;
+      animation: fade-up 1s ease forwards 0.9s;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      margin-top: 3rem;
+      padding: 0.85rem 2.8rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      transition: all 0.3s;
+      opacity: 0;
+      animation: fade-up 1s ease forwards 1.2s;
+    }
+
+    .hero-cta:hover {
+      background: var(--gold);
+      color: var(--espresso);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fade-up 1s ease forwards 1.8s;
+    }
+
+    .scroll-hint span {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: rgba(247,242,234,0.3);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(200,151,74,0.6), transparent);
+      animation: scroll-line 2s ease-in-out infinite;
+    }
+
+    @keyframes scroll-line {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: top; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 8rem 6vw; }
+
+    .section-label {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.75rem;
+      color: var(--gold);
+      letter-spacing: 0.3em;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--espresso);
+      line-height: 1.3;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6vw;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+      height: 480px;
+    }
+
+    /* Animated pour-over illustration */
+    .pour-svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .about-text { max-width: 480px; }
+
+    .about-text p {
+      margin-top: 1.8rem;
+      font-size: 1rem;
+      color: #5A4A3A;
+      line-height: 1.9;
+    }
+
+    .about-text p + p { margin-top: 1rem; }
+
+    .about-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .about-divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+    }
+
+    .about-divider-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* ── BEANS ── */
+    #beans {
+      background: var(--milk);
+    }
+
+    .beans-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 4rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .beans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+    }
+
+    .bean-card {
+      background: var(--cream);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .bean-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--gold);
+      transition: height 0.4s ease;
+    }
+
+    .bean-card:hover::before { height: 100%; }
+    .bean-card:hover { background: #f0ebe0; }
+
+    .bean-origin {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.75rem;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      margin-bottom: 0.8rem;
+    }
+
+    .bean-name {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--espresso);
+      line-height: 1.4;
+    }
+
+    .bean-process {
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--stone);
+      letter-spacing: 0.1em;
+    }
+
+    .bean-flavor {
+      margin-top: 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .flavor-tag {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid rgba(200,151,74,0.4);
+      color: var(--gold);
+      border-radius: 100px;
+      letter-spacing: 0.08em;
+    }
+
+    .bean-desc {
+      margin-top: 1.2rem;
+      font-size: 0.85rem;
+      color: #7A6A5A;
+      line-height: 1.8;
+    }
+
+    /* ── INFO ── */
+    #info {
+      background: var(--espresso);
+      color: var(--cream);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6vw;
+      margin-top: 4rem;
+    }
+
+    .info-block h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(200,151,74,0.2);
+    }
+
+    .info-row {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 0.9rem;
+      font-size: 0.9rem;
+    }
+
+    .info-label {
+      color: var(--stone);
+      min-width: 70px;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+    }
+
+    .info-val { color: rgba(247,242,234,0.85); }
+
+    .info-map-placeholder {
+      margin-top: 1.5rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(200,151,74,0.15);
+      border-radius: 4px;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--stone);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: rgba(247,242,234,0.55);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      transition: color 0.2s;
+    }
+
+    .social-link:hover { color: var(--gold); }
+
+    .social-icon {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(200,151,74,0.3);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1A0E08;
+      padding: 2.5rem 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.9rem;
+      color: rgba(247,242,234,0.4);
+      letter-spacing: 0.12em;
+    }
+
+    .footer-note {
+      font-size: 0.72rem;
+      color: rgba(247,242,234,0.2);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      #about {
+        grid-template-columns: 1fr;
+        padding: 5rem 6vw;
+      }
+
+      .about-visual { height: 280px; }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .nav-links { display: none; }
+
+      section { padding: 5rem 6vw; }
+    }
+
+    /* ── VIDEOS ── */
+    #videos {
+      background: var(--cream);
+    }
+
+    .videos-header {
+      margin-bottom: 4rem;
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .video-item {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .video-frame-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(44,24,16,0.18);
+      aspect-ratio: 267 / 476;
+    }
+
+    .video-frame-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100% !important;
+      height: 100% !important;
+      border: none;
+    }
+
+    .video-meta {
+      max-width: 340px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .video-tag {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.25em;
+      margin-bottom: 0.6rem;
+    }
+
+    .video-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--espresso);
+      line-height: 1.5;
+      margin-bottom: 0.8rem;
+    }
+
+    .video-desc {
+      font-size: 0.83rem;
+      color: #6A5A4A;
+      line-height: 1.85;
+    }
+
+    .video-spec {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .video-spec-row {
+      display: flex;
+      gap: 0.8rem;
+      font-size: 0.75rem;
+    }
+
+    .video-spec-key {
+      color: var(--stone);
+      min-width: 72px;
+    }
+
+    .video-spec-val {
+      color: var(--espresso);
+    }
+
+    /* ── 桌機版字體放大 ── */
+    @media (min-width: 769px) {
+      .section-label        { font-size: 0.9rem; }
+      .bean-origin          { font-size: 0.9rem; }
+      .bean-process         { font-size: 0.9rem; }
+      .flavor-tag           { font-size: 0.85rem; }
+      .bean-desc            { font-size: 1rem; }
+      .about-text p         { font-size: 1.05rem; }
+      .info-row             { font-size: 1rem; }
+      .info-label           { font-size: 0.9rem; }
+      .info-map-placeholder { font-size: 0.95rem; }
+      .social-link          { font-size: 0.9rem; }
+      .video-tag            { font-size: 0.85rem; }
+      .video-desc           { font-size: 0.95rem; }
+      .video-spec-row       { font-size: 0.88rem; }
+      .nav-links a          { font-size: 0.9rem; }
+      .hero-eyebrow         { font-size: 1rem; }
+      .hero-sub             { font-size: 1rem; }
+      .hero-cta             { font-size: 0.9rem; }
+      .footer-brand         { font-size: 1rem; }
+      .footer-note          { font-size: 0.82rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ring, .scroll-line { animation: none; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    沐元素咖啡商行
+    <span>Mu Roaster · Est. Taipei</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">關於我們</a></li>
+    <li><a href="#beans">精選豆款</a></li>
+    <li><a href="#videos">職人影音</a></li>
+    <li><a href="#info">聯絡資訊</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero" aria-label="首頁主視覺">
+  <div class="hero-bg-rings">
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+  </div>
+
+  <!-- Decorative bean SVG -->
+  <svg class="hero-bean" style="top:15%;right:12%;width:180px;" viewBox="0 0 100 100" fill="none">
+    <ellipse cx="50" cy="50" rx="38" ry="22" stroke="#C8974A" stroke-width="1.5" transform="rotate(-30 50 50)"/>
+    <path d="M30 58 Q50 35 70 42" stroke="#C8974A" stroke-width="1" fill="none"/>
+  </svg>
+
+  <svg class="hero-bean" style="bottom:18%;left:8%;width:120px;opacity:0.04;" viewBox="0 0 100 100" fill="none">
+    <ellipse cx="50" cy="50" rx="38" ry="22" stroke="#C8974A" stroke-width="1.5" transform="rotate(20 50 50)"/>
+    <path d="M28 44 Q50 65 72 56" stroke="#C8974A" stroke-width="1" fill="none"/>
+  </svg>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Self-roasted specialty coffee · Taipei Songshan</p>
+    <h1 class="hero-title">
+      沐元素
+      <em>Mu Roaster</em>
+    </h1>
+    <p class="hero-sub">自家烘焙 · 手沖單品 · 精選莊園豆</p>
+    <a href="#about" class="hero-cta">探索我們的咖啡</a>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span>SCROLL</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-title">
+  <div class="about-visual reveal">
+    <!-- Animated pour-over SVG illustration -->
+    <svg class="pour-svg" viewBox="0 0 400 480" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="brewGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#C8974A;stop-opacity:0.3"/>
+          <stop offset="100%" style="stop-color:#2C1810;stop-opacity:0.8"/>
+        </linearGradient>
+        <linearGradient id="steamGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" style="stop-color:#C8974A;stop-opacity:0.6"/>
+          <stop offset="100%" style="stop-color:#C8974A;stop-opacity:0"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Dripper stand legs -->
+      <line x1="155" y1="300" x2="120" y2="420" stroke="#4A2C1A" stroke-width="3" stroke-linecap="round"/>
+      <line x1="245" y1="300" x2="280" y2="420" stroke="#4A2C1A" stroke-width="3" stroke-linecap="round"/>
+      <line x1="120" y1="380" x2="280" y2="380" stroke="#4A2C1A" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- Server/Carafe -->
+      <path d="M145 420 Q140 440 155 455 L245 455 Q260 440 255 420 Z" fill="#3A2A1A" stroke="#C8974A" stroke-width="1.5"/>
+      <ellipse cx="200" cy="420" rx="55" ry="8" fill="#4A2C1A" stroke="#C8974A" stroke-width="1"/>
+      <!-- Coffee in carafe -->
+      <path d="M148 435 Q150 450 155 452 L245 452 Q250 450 252 435 Z" fill="url(#brewGrad)" opacity="0.7"/>
+
+      <!-- Dripper cone -->
+      <path d="M148 240 L165 295 L235 295 L252 240 Z" fill="#5A3C28" stroke="#C8974A" stroke-width="1.5"/>
+      <ellipse cx="200" cy="240" rx="52" ry="10" fill="#6A4C38" stroke="#C8974A" stroke-width="1.5"/>
+      <!-- Ribs -->
+      <line x1="175" y1="250" x2="168" y2="290" stroke="#C8974A" stroke-width="0.5" opacity="0.5"/>
+      <line x1="200" y1="250" x2="200" y2="292" stroke="#C8974A" stroke-width="0.5" opacity="0.5"/>
+      <line x1="225" y1="250" x2="232" y2="290" stroke="#C8974A" stroke-width="0.5" opacity="0.5"/>
+      <!-- Filter paper -->
+      <path d="M152 242 L167 293 L233 293 L248 242" fill="none" stroke="#DFB87A" stroke-width="0.8" opacity="0.4"/>
+      <!-- Coffee grounds -->
+      <ellipse cx="200" cy="266" rx="30" ry="12" fill="#2C1810" opacity="0.8"/>
+
+      <!-- Drip -->
+      <line x1="200" y1="295" x2="200" y2="415" stroke="#C8974A" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.5">
+        <animate attributeName="stroke-dashoffset" values="0;-14" dur="1.2s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Kettle -->
+      <path d="M220 100 Q280 95 290 140 L285 180 Q240 200 190 190 L185 140 Q190 100 220 100Z" fill="#4A3020" stroke="#C8974A" stroke-width="1.5"/>
+      <!-- Kettle spout -->
+      <path d="M285 150 Q320 130 315 180 Q310 195 295 185" fill="#4A3020" stroke="#C8974A" stroke-width="1.5"/>
+      <!-- Kettle handle -->
+      <path d="M200 110 Q170 100 168 145 Q170 165 190 165" fill="none" stroke="#C8974A" stroke-width="2" stroke-linecap="round"/>
+      <!-- Kettle lid -->
+      <ellipse cx="237" cy="100" rx="22" ry="6" fill="#5A3C28" stroke="#C8974A" stroke-width="1.2"/>
+
+      <!-- Pour stream from kettle -->
+      <path d="M305 182 Q302 200 295 215 Q290 225 285 232" stroke="#C8974A" stroke-width="2" fill="none" stroke-linecap="round">
+        <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+      </path>
+
+      <!-- Steam lines from kettle -->
+      <path d="M225 92 Q220 75 228 60" stroke="url(#steamGrad)" stroke-width="1.5" fill="none" stroke-linecap="round">
+        <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite" begin="0s"/>
+      </path>
+      <path d="M245 88 Q240 68 250 50" stroke="url(#steamGrad)" stroke-width="1.5" fill="none" stroke-linecap="round">
+        <animate attributeName="opacity" values="0;0.6;0" dur="2s" repeatCount="indefinite" begin="0.7s"/>
+      </path>
+      <path d="M265 90 Q260 72 270 56" stroke="url(#steamGrad)" stroke-width="1.5" fill="none" stroke-linecap="round">
+        <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite" begin="1.4s"/>
+      </path>
+
+      <!-- Decorative label -->
+      <text x="200" y="460" text-anchor="middle" font-family="'Playfair Display', serif" font-style="italic" font-size="11" fill="#C8974A" opacity="0.5">hand-drip · single origin</text>
+    </svg>
+  </div>
+
+  <div class="about-text reveal">
+    <p class="section-label">About Mu Roaster</p>
+    <h2 class="section-title" id="about-title">從生豆到杯中<br>每一步都是選擇</h2>
+    <p>沐元素咖啡商行，座落於台北松山區八德路三段的市場二樓，是一間低調而專注的自家烘焙咖啡小店。</p>
+    <p>我們精選來自各大產區的單一莊園豆，從哥倫比亞的椰糖水洗、衣索比亞的日曬花果，到來自金門、以高粱酒浸漬的在地特色豆——每一支豆子都有我們想說的故事。</p>
+    <p>除了手沖單品咖啡，也提供自製甜點與下午茶組合，滿五百可外送，適合辦公室同事聚會預約。歡迎私訊洽詢。</p>
+    <div class="about-divider">
+      <div class="about-divider-dot"></div>
+      <div class="about-divider-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEANS -->
+<section id="beans" aria-labelledby="beans-title">
+  <div class="beans-header reveal">
+    <div>
+      <p class="section-label">Current Offerings</p>
+      <h2 class="section-title" id="beans-title">近期精選豆款</h2>
+    </div>
+    <p style="font-size:0.85rem;color:var(--stone);max-width:260px;line-height:1.8;">豆款不定期更新，追蹤我們的 Instagram 掌握最新上架資訊。</p>
+  </div>
+
+  <div class="beans-grid">
+    <article class="bean-card reveal">
+      <p class="bean-origin">Colombia · 哥倫比亞</p>
+      <h3 class="bean-name">米蘭莊園<br>南國 -26</h3>
+      <p class="bean-process">椰糖水洗 · Coconut Sugar Washed</p>
+      <div class="bean-flavor">
+        <span class="flavor-tag">椰子糖</span>
+        <span class="flavor-tag">奶油餅乾</span>
+        <span class="flavor-tag">回甘順口</span>
+      </div>
+      <p class="bean-desc">風味香氣特別，入口順口回甘，椰糖帶出的甜感讓整杯咖啡有種溫暖的尾韻。</p>
+    </article>
+
+    <article class="bean-card reveal">
+      <p class="bean-origin">Ethiopia · 衣索比亞</p>
+      <h3 class="bean-name">古吉 罕貝拉<br>牡丹</h3>
+      <p class="bean-process">日曬 · Natural Process</p>
+      <div class="bean-flavor">
+        <span class="flavor-tag">強烈花香</span>
+        <span class="flavor-tag">甜桃</span>
+        <span class="flavor-tag">荔枝</span>
+        <span class="flavor-tag">果汁感</span>
+      </div>
+      <p class="bean-desc">充滿熱帶果香與花韻，日曬工法帶出濃郁的水果甜感，是喜愛明亮風味者的首選。</p>
+    </article>
+
+    <article class="bean-card reveal">
+      <p class="bean-origin">Kinmen · 金門</p>
+      <h3 class="bean-name">浯島·珍釀</h3>
+      <p class="bean-process">高粱酒浸漬 · Kaoliang Carbonic Maceration</p>
+      <div class="bean-flavor">
+        <span class="flavor-tag">清香高粱</span>
+        <span class="flavor-tag">梅子酒</span>
+        <span class="flavor-tag">酸甜交織</span>
+      </div>
+      <p class="bean-desc">來自金門的在地特色豆，以高粱酒浸漬後日曬，風味獨特而迷人，是本季最值得一試的限定款。</p>
+    </article>
+
+    <article class="bean-card reveal">
+      <p class="bean-origin">Seasonal Blend · 季節配方</p>
+      <h3 class="bean-name">沐元素<br>秋冬配方</h3>
+      <p class="bean-process">混合烘焙 · Seasonal Blend</p>
+      <div class="bean-flavor">
+        <span class="flavor-tag">堅果</span>
+        <span class="flavor-tag">可可</span>
+        <span class="flavor-tag">焦糖甜</span>
+      </div>
+      <p class="bean-desc">專為秋冬設計的季節配方，厚實的堅果底蘊搭配可可的深度，焦糖尾韻讓人心生暖意。</p>
+    </article>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos" aria-labelledby="videos-title">
+  <div class="videos-header reveal">
+    <p class="section-label">Craft in Motion</p>
+    <h2 class="section-title" id="videos-title">職人影音</h2>
+  </div>
+
+  <div class="videos-grid">
+
+    <!-- Video 1 -->
+    <div class="video-item reveal">
+      <div class="video-frame-wrap">
+        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2420521811777494%2F&show_text=false&width=267&t=0"
+          scrolling="no" frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          title="哥倫比亞薇拉甘蔗會社低咖啡因手沖影片"></iframe>
+      </div>
+      <div class="video-meta">
+        <p class="video-tag">Colombia · 低咖啡因</p>
+        <h3 class="video-title">哥倫比亞 薇拉《甘蔗會社》<br>低咖啡因單品</h3>
+        <p class="video-desc">以甘蔗發酵產生的乙酸乙酯（EA）天然溶劑去除咖啡因，在不破壞香氣的情況下保留完整風味。黑糖與甘蔗的清香在乾香階段即非常明顯，入口酸甜平衡，餘韻細密綿長——是一款非常耐喝的單品。</p>
+        <div class="video-spec">
+          <div class="video-spec-row">
+            <span class="video-spec-key">處理法</span>
+            <span class="video-spec-val">EA 甘蔗乙酸乙酯去因</span>
+          </div>
+          <div class="video-spec-row">
+            <span class="video-spec-key">風味</span>
+            <span class="video-spec-val">黑糖 · 甘蔗 · 蔗糖甜</span>
+          </div>
+          <div class="video-spec-row">
+            <span class="video-spec-key">水溫</span>
+            <span class="video-spec-val">95°C</span>
+          </div>
+          <div class="video-spec-row">
+            <span class="video-spec-key">粉水比</span>
+            <span class="video-spec-val">1 : 16</span>
+          </div>
+          <div class="video-spec-row">
+            <span class="video-spec-key">研磨</span>
+            <span class="video-spec-val">小富士鬼齒 / 刻度 5.5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-item reveal">
+      <div class="video-frame-wrap">
+        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1707211367394697%2F&show_text=false&width=267&t=0"
+          scrolling="no" frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          title="沐元素新豆上架影片"></iframe>
+      </div>
+      <div class="video-meta">
+        <p class="video-tag">New Arrivals · 新豆上架</p>
+        <h3 class="video-title">剛烘好的豆子<br>新鮮直送</h3>
+        <p class="video-desc">每一批豆子烘完，我們都在最新鮮的狀態下進行試萃取與杯測，確認風味達到理想後才上架。追蹤我們的社群，第一時間掌握新豆資訊。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- INFO -->
+<section id="info" aria-labelledby="info-title">
+  <p class="section-label" style="color:var(--gold-light)">Find Us</p>
+  <h2 class="section-title" id="info-title" style="color:var(--cream)">來訪我們</h2>
+
+  <div class="info-grid">
+    <div class="info-block reveal">
+      <h3>營業資訊</h3>
+      <div class="info-row">
+        <span class="info-label">地址</span>
+        <span class="info-val">台北市松山區八德路三段76號<br>2樓 43號攤位</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">電話</span>
+        <span class="info-val"><a href="tel:+886963438812" style="color:inherit;text-decoration:none;">0963-438-812</a></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">週三～五</span>
+        <span class="info-val">10:30 – 18:30</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">週六</span>
+        <span class="info-val">10:30 – 17:00</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">週日</span>
+        <span class="info-val">10:30 – 14:30</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">週一～二</span>
+        <span class="info-val">公休</span>
+      </div>
+      <div class="info-map-placeholder">
+        📍 位於台北小巨蛋附近市場二樓，建議搭乘捷運小巨蛋站步行前往。
+      </div>
+    </div>
+
+    <div class="info-block reveal">
+      <h3>聯絡 &amp; 外送預約</h3>
+      <p style="font-size:0.88rem;color:rgba(247,242,234,0.6);line-height:1.9;margin-bottom:1.5rem;">
+        下午茶外送滿 500 元即可，歡迎辦公室揪團預約。<br>
+        8～10 人以上大型訂單可討論套餐組合，請私訊 Instagram 或 Facebook 洽詢。
+      </p>
+
+      <div class="social-links">
+        <a href="https://www.instagram.com/mu.roaster/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="沐元素 Instagram">
+          <span class="social-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+          @mu.roaster
+        </a>
+
+        <a href="https://www.facebook.com/Mu.roaster/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="沐元素 Facebook">
+          <span class="social-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </span>
+          Mu Roaster
+        </a>
+      </div>
+
+      <div style="margin-top:2.5rem;padding:1.5rem;border:1px solid rgba(200,151,74,0.2);border-radius:4px;">
+        <p style="font-size:0.75rem;color:var(--gold);letter-spacing:0.15em;margin-bottom:0.8rem;">COFFEE BEANS AVAILABLE</p>
+        <p style="font-size:0.85rem;color:rgba(247,242,234,0.6);line-height:1.8;">咖啡豆亦提供零售與批發，歡迎洽詢。豆款依季節烘焙，請透過社群私訊確認現有豆款與庫存。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-brand">沐元素咖啡商行 &nbsp;·&nbsp; Mu Roaster</p>
+  <p class="footer-note">台北市松山區八德路三段76號2樓43號位 &nbsp;·&nbsp; © 2025 Mu Roaster</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => io.observe(el));
+
+  // Nav background on scroll
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.background = window.scrollY > 60
+      ? 'rgba(251,248,243,0.96)'
+      : 'rgba(251,248,243,0.85)';
+  }, { passive: true });
+</script>
+</body>
+</html>

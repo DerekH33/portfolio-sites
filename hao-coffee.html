@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hao Coffee 豪咖啡 | 冠軍咖啡師的精品咖啡 · 台北松山</title>
+  <meta name="description" content="Hao Coffee 豪咖啡，榮獲 2023 金杯獎手工組優勝、2024 金門盃美洲濾掛組冠軍。位於台北市松山區八德路四段，提供自家烘焙精品咖啡、現烤甜甜圈、可麗露。">
+  <meta name="keywords" content="Hao Coffee,豪咖啡,台北咖啡廳,松山區咖啡,八德路咖啡,冠軍咖啡,精品咖啡,手沖咖啡,現烤甜甜圈,自家烘焙">
+  <meta property="og:title" content="Hao Coffee 豪咖啡 · 冠軍咖啡師的精品咖啡">
+  <meta property="og:description" content="2024 金門盃冠軍 × 2023 金杯獎優勝。台北松山自家烘焙精品咖啡、現烤甜甜圈。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <link rel="canonical" href="https://haocoffee-taipei.com/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Hao Coffee 豪咖啡",
+    "alternateName": "Hao Coffee Roaster",
+    "description": "2024金門盃美洲濾掛組冠軍、2023金杯獎手工組優勝。自家烘焙精品咖啡、現烤甜甜圈。",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "八德路四段91巷9號1樓",
+      "addressLocality": "松山區",
+      "addressRegion": "台北市",
+      "postalCode": "105",
+      "addressCountry": "TW"
+    },
+    "telephone": "+886-2-2766-0234",
+    "openingHours": "Mo-Sa 10:00-20:00",
+    "priceRange": "$50-$155",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "137"
+    },
+    "award": ["2024金門盃美洲濾掛組冠軍", "2023金杯獎手工組優勝"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #1A2240;
+      --navy2:  #0F1628;
+      --gold:   #C8913A;
+      --gold2:  #E8B86D;
+      --gold3:  #F5D48A;
+      --cream:  #F5EDD8;
+      --warm:   #EDE0C4;
+      --stone:  #8A7A5A;
+      --text:   #2A1E0E;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy2);
+      color: var(--cream);
+      font-family: 'Noto Sans TC', 'PingFang TC', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 5vw;
+      transition: background 0.4s;
+    }
+
+    nav.scrolled {
+      background: rgba(15,22,40,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200,145,58,0.2);
+    }
+
+    .nav-logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    /* Recreate the H logo */
+    .nav-logo-icon {
+      width: 40px; height: 40px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+    }
+
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-logo-zh {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--cream);
+      letter-spacing: 0.12em;
+      line-height: 1.1;
+    }
+
+    .nav-logo-en {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.65rem;
+      color: var(--gold);
+      letter-spacing: 0.3em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      color: rgba(245,237,216,0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold2); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--navy2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Trophy beam rays */
+    .hero-rays {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 900px; height: 900px;
+      pointer-events: none;
+    }
+
+    .hero-rays::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(200,145,58,0.04) 10deg,
+        transparent 20deg,
+        rgba(200,145,58,0.04) 30deg,
+        transparent 40deg,
+        rgba(200,145,58,0.04) 50deg,
+        transparent 60deg,
+        rgba(200,145,58,0.04) 70deg,
+        transparent 80deg,
+        rgba(200,145,58,0.04) 90deg,
+        transparent 100deg,
+        rgba(200,145,58,0.04) 110deg,
+        transparent 120deg,
+        rgba(200,145,58,0.04) 130deg,
+        transparent 140deg,
+        rgba(200,145,58,0.04) 150deg,
+        transparent 160deg,
+        rgba(200,145,58,0.04) 170deg,
+        transparent 180deg,
+        rgba(200,145,58,0.04) 190deg,
+        transparent 200deg,
+        rgba(200,145,58,0.04) 210deg,
+        transparent 220deg,
+        rgba(200,145,58,0.04) 230deg,
+        transparent 240deg,
+        rgba(200,145,58,0.04) 250deg,
+        transparent 260deg,
+        rgba(200,145,58,0.04) 270deg,
+        transparent 280deg,
+        rgba(200,145,58,0.04) 290deg,
+        transparent 300deg,
+        rgba(200,145,58,0.04) 310deg,
+        transparent 320deg,
+        rgba(200,145,58,0.04) 330deg,
+        transparent 340deg,
+        rgba(200,145,58,0.04) 350deg,
+        transparent 360deg
+      );
+      border-radius: 50%;
+      animation: spin-slow 60s linear infinite;
+    }
+
+    @keyframes spin-slow { to { transform: rotate(360deg); } }
+
+    /* Stars bg */
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 15% 20%, rgba(245,212,138,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 15%, rgba(245,212,138,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 75%, rgba(245,212,138,0.2) 0%, transparent 100%),
+        radial-gradient(1px 1px at 25% 65%, rgba(245,212,138,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 55%, rgba(245,212,138,0.2) 0%, transparent 100%),
+        radial-gradient(2px 2px at 45% 30%, rgba(245,212,138,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 70% 85%, rgba(245,212,138,0.3) 0%, transparent 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+      max-width: 900px;
+    }
+
+    /* Trophy SVG */
+    .hero-trophy {
+      margin: 0 auto 2rem;
+      width: 90px;
+      opacity: 0;
+      animation: trophy-drop 1s cubic-bezier(0.34,1.56,0.64,1) forwards 0.3s;
+    }
+
+    @keyframes trophy-drop {
+      from { opacity: 0; transform: translateY(-30px) scale(0.8); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .hero-award-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+      opacity: 0;
+      animation: fade-up 0.8s ease forwards 0.6s;
+      flex-wrap: wrap;
+    }
+
+    .hero-award-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1.1rem;
+      border: 1px solid rgba(200,145,58,0.5);
+      font-size: 0.72rem;
+      color: var(--gold2);
+      letter-spacing: 0.12em;
+      background: rgba(200,145,58,0.08);
+    }
+
+    .hero-title-en {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 14vw, 11rem);
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      line-height: 0.9;
+      opacity: 0;
+      animation: fade-up 1s ease forwards 0.9s;
+      background: linear-gradient(180deg, var(--gold3) 0%, var(--gold) 50%, #8A5A1A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-title-zh {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(1.4rem, 4vw, 2.8rem);
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.3em;
+      margin-top: 0.3rem;
+      opacity: 0;
+      animation: fade-up 1s ease forwards 1.1s;
+    }
+
+    .hero-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem auto;
+      width: 280px;
+      opacity: 0;
+      animation: fade-up 1s ease forwards 1.3s;
+    }
+
+    .hero-divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold));
+    }
+
+    .hero-divider-line.r {
+      background: linear-gradient(to left, transparent, var(--gold));
+    }
+
+    .hero-divider-diamond {
+      width: 8px; height: 8px;
+      background: var(--gold);
+      transform: rotate(45deg);
+    }
+
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(0.9rem, 2vw, 1.2rem);
+      color: rgba(245,237,216,0.6);
+      letter-spacing: 0.2em;
+      opacity: 0;
+      animation: fade-up 1s ease forwards 1.4s;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+      opacity: 0;
+      animation: fade-up 1s ease forwards 1.6s;
+    }
+
+    .btn-gold {
+      padding: 0.9rem 2.8rem;
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      color: var(--navy2);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      transition: all 0.3s;
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    .btn-gold:hover { filter: brightness(1.12); transform: translateY(-2px); }
+
+    .btn-outline {
+      padding: 0.9rem 2.8rem;
+      border: 1px solid rgba(200,145,58,0.5);
+      color: var(--gold2);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold2);
+      background: rgba(200,145,58,0.08);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      opacity: 0;
+      animation: fade-up 1s ease forwards 2.2s;
+    }
+
+    .scroll-hint span {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      color: rgba(200,145,58,0.4);
+    }
+
+    .scroll-line {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, rgba(200,145,58,0.6), transparent);
+      animation: scroll-drop 2s ease-in-out infinite;
+    }
+
+    @keyframes scroll-drop {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: top; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── AWARDS BANNER ── */
+    #awards {
+      background: linear-gradient(135deg, var(--gold) 0%, #A06B1A 50%, var(--gold) 100%);
+      padding: 3rem 5vw;
+    }
+
+    .awards-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4vw;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .award-item {
+      text-align: center;
+      color: var(--navy2);
+    }
+
+    .award-year {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.5rem;
+      line-height: 1;
+      color: rgba(15,22,40,0.25);
+    }
+
+    .award-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      margin-top: -0.8rem;
+    }
+
+    .award-sub {
+      font-size: 0.78rem;
+      margin-top: 0.3rem;
+      opacity: 0.7;
+      letter-spacing: 0.1em;
+    }
+
+    .awards-sep {
+      width: 1px;
+      height: 60px;
+      background: rgba(15,22,40,0.2);
+    }
+
+    /* ── SECTION UTILS ── */
+    section { padding: 9rem 6vw; }
+
+    .section-eyebrow {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.8rem;
+      color: var(--gold);
+      letter-spacing: 0.4em;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.25;
+      letter-spacing: 0.06em;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.85s ease, transform 0.85s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── STORY ── */
+    #story {
+      background: var(--navy);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8vw;
+      align-items: center;
+    }
+
+    /* Decorative coffee bean art */
+    .story-art {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .story-art svg {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .story-text p {
+      margin-top: 1.8rem;
+      font-size: 1rem;
+      color: rgba(245,237,216,0.7);
+      line-height: 2;
+    }
+
+    .stat-row {
+      display: flex;
+      gap: 3rem;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(200,145,58,0.2);
+    }
+
+    .stat strong {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: var(--gold2);
+      line-height: 1;
+      letter-spacing: 0.05em;
+    }
+
+    .stat span {
+      font-size: 0.78rem;
+      color: var(--stone);
+      letter-spacing: 0.1em;
+    }
+
+    /* ── MENU ── */
+    #menu {
+      background: var(--navy2);
+    }
+
+    .menu-tabs {
+      display: flex;
+      gap: 0;
+      margin: 3rem 0 2.5rem;
+      border-bottom: 1px solid rgba(200,145,58,0.2);
+      flex-wrap: wrap;
+    }
+
+    .menu-tab {
+      padding: 0.8rem 2rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.15em;
+      color: rgba(245,237,216,0.45);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    .menu-tab.active {
+      color: var(--gold2);
+      border-bottom-color: var(--gold);
+    }
+
+    .menu-tab:hover { color: var(--gold2); }
+
+    .menu-panel { display: none; }
+    .menu-panel.active { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2px; }
+
+    .menu-item {
+      background: rgba(255,255,255,0.03);
+      padding: 1.8rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: background 0.2s;
+      border-left: 2px solid transparent;
+    }
+
+    .menu-item:hover {
+      background: rgba(200,145,58,0.06);
+      border-left-color: var(--gold);
+    }
+
+    .menu-item-left { flex: 1; }
+
+    .menu-item-zh {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--cream);
+    }
+
+    .menu-item-en {
+      font-size: 0.75rem;
+      color: var(--stone);
+      margin-top: 0.2rem;
+      letter-spacing: 0.08em;
+    }
+
+    .menu-item-note {
+      font-size: 0.72rem;
+      color: rgba(200,145,58,0.6);
+      margin-top: 0.4rem;
+    }
+
+    .menu-item-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      color: var(--gold2);
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+    }
+
+    .menu-note-bar {
+      margin-top: 1.5rem;
+      padding: 1rem 1.5rem;
+      background: rgba(200,145,58,0.06);
+      border-left: 2px solid var(--gold);
+      font-size: 0.82rem;
+      color: rgba(245,237,216,0.55);
+      letter-spacing: 0.05em;
+    }
+
+    /* Discontinued badge */
+    .discontinued {
+      display: inline-block;
+      font-size: 0.65rem;
+      padding: 0.15rem 0.5rem;
+      background: rgba(180,60,60,0.2);
+      color: #E07070;
+      border: 1px solid rgba(180,60,60,0.3);
+      letter-spacing: 0.08em;
+      margin-top: 0.4rem;
+    }
+
+    /* ── SPECIALS ── */
+    #specials {
+      background: var(--navy);
+    }
+
+    .specials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      margin-top: 4rem;
+    }
+
+    .special-card {
+      background: rgba(255,255,255,0.02);
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .special-card:hover { background: rgba(200,145,58,0.05); }
+
+    .special-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s;
+    }
+
+    .special-card:hover::after { transform: scaleX(1); }
+
+    .special-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .special-name {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--cream);
+      margin-bottom: 0.8rem;
+    }
+
+    .special-desc {
+      font-size: 0.88rem;
+      color: rgba(245,237,216,0.55);
+      line-height: 1.9;
+    }
+
+    /* ── INFO ── */
+    #info {
+      background: var(--navy2);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6vw;
+      margin-top: 4rem;
+    }
+
+    .info-block h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      border-bottom: 1px solid rgba(200,145,58,0.2);
+      padding-bottom: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-row {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+      font-size: 0.92rem;
+    }
+
+    .info-label {
+      min-width: 70px;
+      color: var(--stone);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+    }
+
+    .info-val { color: rgba(245,237,216,0.8); }
+
+    .wifi-box {
+      margin-top: 2rem;
+      padding: 1.4rem 1.6rem;
+      background: rgba(200,145,58,0.06);
+      border: 1px solid rgba(200,145,58,0.15);
+    }
+
+    .wifi-box p {
+      font-size: 0.82rem;
+      color: rgba(245,237,216,0.5);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.1em;
+    }
+
+    .wifi-row {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.88rem;
+    }
+
+    .wifi-key { color: var(--stone); }
+    .wifi-val { color: var(--gold2); font-family: monospace; letter-spacing: 0.1em; }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: rgba(245,237,216,0.5);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      transition: color 0.2s;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid rgba(200,145,58,0.2);
+    }
+
+    .social-link:hover { color: var(--gold2); border-color: rgba(200,145,58,0.5); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #070A12;
+      padding: 2.5rem 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-top: 1px solid rgba(200,145,58,0.1);
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      color: rgba(245,237,216,0.3);
+      letter-spacing: 0.3em;
+    }
+
+    .footer-note {
+      font-size: 0.72rem;
+      color: rgba(245,237,216,0.18);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      #story {
+        grid-template-columns: 1fr;
+        padding: 6rem 6vw;
+      }
+
+      .story-art { display: none; }
+
+      .specials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+
+      .nav-links { display: none; }
+      .awards-sep { display: none; }
+      section { padding: 6rem 6vw; }
+    }
+
+    @media (min-width: 769px) {
+      .section-eyebrow  { font-size: 0.9rem; }
+      .menu-item-zh     { font-size: 1.05rem; }
+      .menu-item-en     { font-size: 0.82rem; }
+      .special-desc     { font-size: 0.95rem; }
+      .info-row         { font-size: 1rem; }
+      .info-label       { font-size: 0.88rem; }
+      .wifi-box p       { font-size: 0.88rem; }
+      .wifi-row         { font-size: 0.95rem; }
+      .social-link      { font-size: 0.88rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-line, .hero-rays::before { animation: none; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <div class="nav-logo-icon">H</div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-zh">豪咖啡</span>
+      <span class="nav-logo-en">HAO COFFEE ROASTER</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#story">品牌故事</a></li>
+    <li><a href="#menu">完整菜單</a></li>
+    <li><a href="#specials">店內特色</a></li>
+    <li><a href="#info">來訪資訊</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero" aria-label="首頁主視覺">
+  <div class="hero-dots"></div>
+  <div class="hero-rays"></div>
+
+  <div class="hero-content">
+    <!-- Trophy SVG -->
+    <svg class="hero-trophy" viewBox="0 0 90 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="trophyGold" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#F5D48A"/>
+          <stop offset="50%" stop-color="#C8913A"/>
+          <stop offset="100%" stop-color="#8A5A1A"/>
+        </linearGradient>
+      </defs>
+      <!-- Cup body -->
+      <path d="M22 10 L68 10 L62 55 Q45 62 28 55 Z" fill="url(#trophyGold)" opacity="0.9"/>
+      <!-- Cup shine -->
+      <path d="M28 14 L34 48" stroke="rgba(255,255,255,0.25)" stroke-width="3" stroke-linecap="round"/>
+      <!-- Handles -->
+      <path d="M22 18 Q8 20 10 35 Q10 48 22 46" stroke="url(#trophyGold)" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M68 18 Q82 20 80 35 Q80 48 68 46" stroke="url(#trophyGold)" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <!-- Stem -->
+      <rect x="40" y="55" width="10" height="18" fill="url(#trophyGold)"/>
+      <!-- Base -->
+      <rect x="28" y="73" width="34" height="8" rx="2" fill="url(#trophyGold)"/>
+      <!-- Base line -->
+      <rect x="22" y="81" width="46" height="4" rx="1" fill="url(#trophyGold)" opacity="0.7"/>
+      <!-- Star on cup -->
+      <text x="45" y="38" text-anchor="middle" font-size="18" fill="rgba(255,255,255,0.7)">★</text>
+    </svg>
+
+    <div class="hero-award-row">
+      <span class="hero-award-badge">🏅 2024 金門盃・冠軍</span>
+      <span class="hero-award-badge">🏆 2023 金杯獎・優勝</span>
+    </div>
+
+    <h1 class="hero-title-en">HAO COFFEE</h1>
+    <p class="hero-title-zh">豪 咖 啡</p>
+
+    <div class="hero-divider">
+      <div class="hero-divider-line"></div>
+      <div class="hero-divider-diamond"></div>
+      <div class="hero-divider-line r"></div>
+    </div>
+
+    <p class="hero-tagline">Champion Barista · Self-Roasted Specialty Coffee · Taipei Songshan</p>
+
+    <div class="hero-cta-row">
+      <a href="#menu" class="btn-gold">瀏覽完整菜單</a>
+      <a href="#info" class="btn-outline">立即前往</a>
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span>SCROLL</span>
+  </div>
+</section>
+
+<!-- AWARDS BANNER -->
+<div id="awards" role="region" aria-label="得獎紀錄">
+  <div class="awards-inner">
+    <div class="award-item reveal">
+      <div class="award-year">2024</div>
+      <div class="award-title">🥇 金門盃冠軍</div>
+      <div class="award-sub">美洲濾掛咖啡組</div>
+    </div>
+    <div class="awards-sep"></div>
+    <div class="award-item reveal">
+      <div class="award-year">2023</div>
+      <div class="award-title">🏆 金杯獎優勝</div>
+      <div class="award-sub">手工精品咖啡組</div>
+    </div>
+    <div class="awards-sep"></div>
+    <div class="award-item reveal">
+      <div class="award-year">4.8</div>
+      <div class="award-title">⭐ Google 評分</div>
+      <div class="award-sub">137+ 則顧客好評</div>
+    </div>
+  </div>
+</div>
+
+<!-- STORY -->
+<section id="story" aria-labelledby="story-title">
+  <div class="story-art reveal" aria-hidden="true">
+    <svg viewBox="0 0 420 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bgN" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#2A3558"/>
+          <stop offset="100%" stop-color="#1A2240"/>
+        </radialGradient>
+        <linearGradient id="gGold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#F5D48A"/>
+          <stop offset="100%" stop-color="#C8913A"/>
+        </linearGradient>
+      </defs>
+
+      <rect width="420" height="480" fill="url(#bgN)" rx="4"/>
+
+      <!-- Outer frame -->
+      <rect x="16" y="16" width="388" height="448" stroke="rgba(200,145,58,0.3)" stroke-width="1" fill="none"/>
+      <rect x="24" y="24" width="372" height="432" stroke="rgba(200,145,58,0.12)" stroke-width="0.5" fill="none"/>
+
+      <!-- Corner ornaments -->
+      <path d="M16 50 L16 16 L50 16" stroke="url(#gGold)" stroke-width="1.5" fill="none"/>
+      <path d="M404 50 L404 16 L370 16" stroke="url(#gGold)" stroke-width="1.5" fill="none"/>
+      <path d="M16 430 L16 464 L50 464" stroke="url(#gGold)" stroke-width="1.5" fill="none"/>
+      <path d="M404 430 L404 464 L370 464" stroke="url(#gGold)" stroke-width="1.5" fill="none"/>
+      <circle cx="16" cy="16" r="3" fill="url(#gGold)"/>
+      <circle cx="404" cy="16" r="3" fill="url(#gGold)"/>
+      <circle cx="16" cy="464" r="3" fill="url(#gGold)"/>
+      <circle cx="404" cy="464" r="3" fill="url(#gGold)"/>
+
+      <!-- Large donut illustration -->
+      <circle cx="210" cy="200" r="110" fill="rgba(200,145,58,0.06)" stroke="rgba(200,145,58,0.2)" stroke-width="1"/>
+      <circle cx="210" cy="200" r="90" fill="rgba(26,34,64,0.8)" stroke="rgba(200,145,58,0.15)" stroke-width="0.5"/>
+      <!-- Donut ring -->
+      <circle cx="210" cy="200" r="75" fill="none" stroke="rgba(200,145,58,0.3)" stroke-width="22" stroke-dasharray="8 4"/>
+      <circle cx="210" cy="200" r="75" fill="none" stroke="url(#gGold)" stroke-width="18" opacity="0.4"/>
+      <!-- Donut hole -->
+      <circle cx="210" cy="200" r="30" fill="url(#bgN)" stroke="rgba(200,145,58,0.4)" stroke-width="1"/>
+
+      <!-- Coffee cup icon -->
+      <g transform="translate(185, 176)">
+        <rect x="4" y="8" width="30" height="24" rx="3" fill="none" stroke="url(#gGold)" stroke-width="1.5"/>
+        <path d="M34 14 Q42 14 42 22 Q42 30 34 30" stroke="url(#gGold)" stroke-width="1.5" fill="none"/>
+        <rect x="0" y="32" width="38" height="3" rx="1" fill="rgba(200,145,58,0.5)"/>
+        <path d="M14 4 Q12 0 14 -4" stroke="rgba(200,145,58,0.5)" stroke-width="1" fill="none"/>
+        <path d="M22 3 Q20 -1 22 -5" stroke="rgba(200,145,58,0.5)" stroke-width="1" fill="none"/>
+      </g>
+
+      <!-- Stars around trophy -->
+      <text x="95" y="140" font-size="12" fill="rgba(200,145,58,0.4)" text-anchor="middle">★</text>
+      <text x="325" y="140" font-size="12" fill="rgba(200,145,58,0.4)" text-anchor="middle">★</text>
+      <text x="60" y="215" font-size="8" fill="rgba(200,145,58,0.3)" text-anchor="middle">✦</text>
+      <text x="360" y="215" font-size="8" fill="rgba(200,145,58,0.3)" text-anchor="middle">✦</text>
+
+      <!-- Year badges -->
+      <rect x="60" y="310" width="100" height="44" rx="2" fill="rgba(200,145,58,0.1)" stroke="rgba(200,145,58,0.3)" stroke-width="0.8"/>
+      <text x="110" y="328" text-anchor="middle" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#C8913A" letter-spacing="2">2023</text>
+      <text x="110" y="346" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(200,145,58,0.7)" letter-spacing="1">金杯獎優勝</text>
+
+      <rect x="260" y="310" width="100" height="44" rx="2" fill="rgba(200,145,58,0.1)" stroke="rgba(200,145,58,0.3)" stroke-width="0.8"/>
+      <text x="310" y="328" text-anchor="middle" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#C8913A" letter-spacing="2">2024</text>
+      <text x="310" y="346" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(200,145,58,0.7)" letter-spacing="1">金門盃冠軍</text>
+
+      <!-- Trophy center -->
+      <g transform="translate(186,360)">
+        <path d="M12 0 L20 0 L18 22 Q15 26 12 22 Z" fill="url(#gGold)" opacity="0.8"/>
+        <path d="M4 6 Q-4 8 -3 16 Q-2 24 4 22" stroke="url(#gGold)" stroke-width="2" fill="none"/>
+        <path d="M20 6 Q28 8 27 16 Q26 24 20 22" stroke="url(#gGold)" stroke-width="2" fill="none"/>
+        <rect x="10" y="22" width="12" height="8" fill="url(#gGold)" opacity="0.8"/>
+        <rect x="5" y="30" width="22" height="4" rx="1" fill="url(#gGold)" opacity="0.7"/>
+      </g>
+
+      <!-- Bottom text -->
+      <text x="210" y="420" text-anchor="middle" font-family="'Bebas Neue', sans-serif" font-size="12" fill="rgba(200,145,58,0.4)" letter-spacing="5">HAO COFFEE ROASTER</text>
+      <text x="210" y="440" text-anchor="middle" font-family="serif" font-size="10" fill="rgba(200,145,58,0.25)" letter-spacing="8">豪 咖 啡</text>
+    </svg>
+  </div>
+
+  <div class="story-text reveal">
+    <p class="section-eyebrow">Our Story · 品牌故事</p>
+    <h2 class="section-title" id="story-title">一間小店<br>兩座冠軍獎盃</h2>
+    <p>Hao Coffee 豪咖啡，坐落於台北市松山區八德路四段的靜巷之中，是一間以「冠軍」為底氣的自家烘焙精品咖啡館。</p>
+    <p>老闆親自烘豆、親自沖煮，以精品咖啡師的嚴格標準對待每一杯飲品——這份執著，讓豪咖啡榮獲 2023 年金杯獎手工組優勝，以及 2024 年金門盃美洲濾掛組冠軍殊榮。</p>
+    <p>除了咖啡，店內每日現烤甜甜圈與可麗露也是必點亮點，簡約歐系的空間氛圍，讓每一次到訪都成為放鬆身心的好時光。</p>
+    <div class="stat-row">
+      <div class="stat">
+        <strong>2</strong>
+        <span>國內大賽得獎</span>
+      </div>
+      <div class="stat">
+        <strong>4.8</strong>
+        <span>Google 星評</span>
+      </div>
+      <div class="stat">
+        <strong>137+</strong>
+        <span>顧客好評</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" aria-labelledby="menu-title">
+  <div class="reveal">
+    <p class="section-eyebrow">Full Menu · 完整菜單</p>
+    <h2 class="section-title" id="menu-title">點什麼都對</h2>
+  </div>
+
+  <div class="menu-tabs" role="tablist">
+    <button class="menu-tab active" role="tab" aria-selected="true" onclick="switchTab('coffee',this)">☕ 咖啡</button>
+    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab('donut',this)">🍩 甜甜圈</button>
+    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab('cake',this)">🍮 蛋糕</button>
+    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab('drinks',this)">🧋 飲品</button>
+  </div>
+
+  <!-- Coffee -->
+  <div id="tab-coffee" class="menu-panel active reveal">
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">手沖單品</div>
+        <div class="menu-item-en">Pour Over — Drip Coffee</div>
+        <div class="menu-item-note">請洽詢店員當日豆款</div>
+      </div>
+      <div class="menu-item-price">洽詢</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">濃縮</div>
+        <div class="menu-item-en">Espresso</div>
+      </div>
+      <div class="menu-item-price">$100</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">美式咖啡</div>
+        <div class="menu-item-en">Americano</div>
+      </div>
+      <div class="menu-item-price">$100</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">通寧咖啡</div>
+        <div class="menu-item-en">Tonic Coffee</div>
+      </div>
+      <div class="menu-item-price">$110</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">卡布奇諾</div>
+        <div class="menu-item-en">Cappuccino</div>
+      </div>
+      <div class="menu-item-price">$110</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">拿鐵咖啡</div>
+        <div class="menu-item-en">Latte</div>
+      </div>
+      <div class="menu-item-price">$120</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">摩卡咖啡</div>
+        <div class="menu-item-en">Mocha</div>
+      </div>
+      <div class="menu-item-price">$130</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">抹茶拿鐵</div>
+        <div class="menu-item-en">Matcha Latte</div>
+      </div>
+      <div class="menu-item-price">$140</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">燕麥奶拿鐵</div>
+        <div class="menu-item-en">Oat Milk Latte</div>
+      </div>
+      <div class="menu-item-price">$140</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">榛果可可拿鐵</div>
+        <div class="menu-item-en">Hazelnut Cocoa Latte</div>
+        <div class="menu-item-note">使用 OATLY 燕麥奶 × 法芙娜可可粉</div>
+      </div>
+      <div class="menu-item-price">$155</div>
+    </div>
+  </div>
+
+  <!-- Donut -->
+  <div id="tab-donut" class="menu-panel reveal">
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">原來如此（原味）</div>
+        <div class="menu-item-en">Original</div>
+      </div>
+      <div class="menu-item-price">$50</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">繽白守黑（黑糖）</div>
+        <div class="menu-item-en">Brown Sugar</div>
+      </div>
+      <div class="menu-item-price">$55</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">可有可無（可可）</div>
+        <div class="menu-item-en">Chocolate</div>
+      </div>
+      <div class="menu-item-price">$55</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">煉煉不忘（煉乳）</div>
+        <div class="menu-item-en">Sweetened Condensed Milk</div>
+      </div>
+      <div class="menu-item-price">$55</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">肉桂榮華（肉桂）</div>
+        <div class="menu-item-en">Cinnamon</div>
+      </div>
+      <div class="menu-item-price">$55</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">好事花生（花生）</div>
+        <div class="menu-item-en">Peanut</div>
+      </div>
+      <div class="menu-item-price">$60</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">草莓甜心（草莓）</div>
+        <div class="menu-item-en">Strawberry</div>
+      </div>
+      <div class="menu-item-price">$60</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">藍色戀人（藍莓）</div>
+        <div class="menu-item-en">Blueberry</div>
+      </div>
+      <div class="menu-item-price">$60</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">起司回生（起司）</div>
+        <div class="menu-item-en">Cheese</div>
+      </div>
+      <div class="menu-item-price">$65</div>
+    </div>
+  </div>
+
+  <!-- Cake -->
+  <div id="tab-cake" class="menu-panel reveal">
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">可麗露</div>
+        <div class="menu-item-en">Canelé</div>
+        <div class="menu-item-note">限量供應 · 售完為止</div>
+      </div>
+      <div class="menu-item-price">$50 / 1個<br><span style="font-size:1rem">$90 / 2個</span></div>
+    </div>
+    <div class="menu-item" style="opacity:0.5">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">蛋糕系列</div>
+        <div class="menu-item-en">Cakes</div>
+        <div class="discontinued">永久停售</div>
+      </div>
+      <div class="menu-item-price" style="font-size:0.9rem;color:#E07070">停售</div>
+    </div>
+    <div class="menu-item" style="opacity:0.5">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">檸檬磅蛋糕</div>
+        <div class="menu-item-en">Lemon Pound Cake</div>
+        <div class="discontinued">永久停售</div>
+      </div>
+      <div class="menu-item-price" style="font-size:0.9rem;color:#E07070">停售</div>
+    </div>
+  </div>
+
+  <!-- Drinks -->
+  <div id="tab-drinks" class="menu-panel reveal">
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">紅茶</div>
+        <div class="menu-item-en">Black Tea</div>
+      </div>
+      <div class="menu-item-price">$90</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">奶茶</div>
+        <div class="menu-item-en">Milk Tea</div>
+      </div>
+      <div class="menu-item-price">$100</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">鮮奶茶</div>
+        <div class="menu-item-en">Fresh Milk Tea</div>
+      </div>
+      <div class="menu-item-price">$110</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-zh">巧克力</div>
+        <div class="menu-item-en">Chocolate Milk</div>
+      </div>
+      <div class="menu-item-price">$120</div>
+    </div>
+  </div>
+
+  <div class="menu-note-bar reveal">
+    ☕ 所有咖啡與飲品：大杯 +$20 &ensp;·&ensp; 🧋 飲品加味：榛果、香草、焦糖、太妃糖、夏威夷豆 +$15 &ensp;·&ensp; 燕麥奶 +$30 &ensp;·&ensp; 🍩 甜甜圈冰鎮版 +$10（限量）
+  </div>
+</section>
+
+<!-- SPECIALS -->
+<section id="specials" aria-labelledby="specials-title">
+  <div class="reveal">
+    <p class="section-eyebrow">Why Hao Coffee · 為什麼選豪咖啡</p>
+    <h2 class="section-title" id="specials-title">不只是第一名<br>更是你的日常</h2>
+  </div>
+
+  <div class="specials-grid">
+    <article class="special-card reveal">
+      <span class="special-icon">🥇</span>
+      <h3 class="special-name">冠軍認證的咖啡</h3>
+      <p class="special-desc">榮獲 2024 金門盃美洲濾掛組冠軍、2023 金杯獎手工組優勝，每一杯都是經過賽事淬煉的精品水準，不是說說，是真正得過獎的那種。</p>
+    </article>
+
+    <article class="special-card reveal">
+      <span class="special-icon">☕</span>
+      <h3 class="special-name">自家烘豆嚴格把關</h3>
+      <p class="special-desc">老闆親自烘焙每一批豆子，從生豆挑選到烘焙曲線都親力親為，確保你喝到的每一口都是最新鮮的風味。手沖單品請洽詢店員當日豆款。</p>
+    </article>
+
+    <article class="special-card reveal">
+      <span class="special-icon">🍩</span>
+      <h3 class="special-name">每日現烤甜甜圈</h3>
+      <p class="special-desc">原味、黑糖、肉桂、草莓、藍莓……每天現烤、種類豐富，加上獨特的命名方式——「好事花生」、「藍色戀人」——每顆都有自己的個性。</p>
+    </article>
+
+    <article class="special-card reveal">
+      <span class="special-icon">🏠</span>
+      <h3 class="special-name">包廂空間可預約</h3>
+      <p class="special-desc">店內備有獨立包廂，適合小型聚會、生日慶生或商務會面。歡迎來電預約，提前確保你的專屬空間。</p>
+    </article>
+
+    <article class="special-card reveal">
+      <span class="special-icon">🎨</span>
+      <h3 class="special-name">簡約歐系空間氛圍</h3>
+      <p class="special-desc">不刻意堆砌的裝飾，深色系木質搭配金屬元素，讓你一走進來就能放鬆心情。吧台座位可近距離欣賞咖啡師的沖煮過程。</p>
+    </article>
+
+    <article class="special-card reveal">
+      <span class="special-icon">🍮</span>
+      <h3 class="special-name">限量可麗露</h3>
+      <p class="special-desc">焦脆外殼包裹著柔軟蛋奶內芯，每日限量供應，賣完為止。來得早才有——搭配一杯手沖單品，就是完美的下午。</p>
+    </article>
+  </div>
+</section>
+
+<!-- INFO -->
+<section id="info" aria-labelledby="info-title">
+  <div class="reveal">
+    <p class="section-eyebrow">Visit Us · 來訪資訊</p>
+    <h2 class="section-title" id="info-title">找到我們</h2>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-block reveal">
+      <h3>店舖資訊</h3>
+      <div class="info-row">
+        <span class="info-label">地址</span>
+        <span class="info-val">台北市松山區八德路四段91巷9號1樓</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">電話</span>
+        <span class="info-val"><a href="tel:+886227660234" style="color:inherit;text-decoration:none;">(02) 2766-0234</a></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">週一～六</span>
+        <span class="info-val">10:00 – 20:00</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">週日</span>
+        <span class="info-val">公休</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">交通</span>
+        <span class="info-val">近捷運板南線「忠孝敦化站」<br>步行約 10 分鐘</span>
+      </div>
+
+      <div class="wifi-box">
+        <p>📶 免費 Wi-Fi</p>
+        <div class="wifi-row">
+          <span class="wifi-key">名稱</span>
+          <span class="wifi-val">Hao coffee</span>
+        </div>
+        <div class="wifi-row" style="margin-top:0.3rem">
+          <span class="wifi-key">密碼</span>
+          <span class="wifi-val">27660234</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-block reveal">
+      <h3>社群 &amp; 訂購</h3>
+      <p style="font-size:0.9rem;color:rgba(245,237,216,0.55);line-height:1.9;margin-bottom:1.8rem;">
+        追蹤 Facebook 粉絲專頁，掌握每日甜甜圈口味、限量可麗露資訊與不定期特惠活動。<br>
+        也可透過 Uber Eats 線上訂購外送到府。
+      </p>
+
+      <div class="social-links">
+        <a href="https://www.facebook.com/p/Hao-Coffee%E8%B1%AA%E5%92%96%E5%95%A1-61558232619588/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="豪咖啡 Facebook">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+          Facebook 粉絲專頁
+        </a>
+      </div>
+
+      <div style="margin-top:2.5rem;padding:2rem;border:1px solid rgba(200,145,58,0.15);background:rgba(200,145,58,0.04);">
+        <p style="font-family:'Bebas Neue',sans-serif;font-size:0.8rem;letter-spacing:0.25em;color:var(--gold);margin-bottom:1rem;">CHAMPION'S RECOMMENDATION</p>
+        <p style="font-size:0.9rem;color:rgba(245,237,216,0.6);line-height:1.9;">初訪推薦：手沖單品咖啡（洽詢店員當日豆款）+ 現烤甜甜圈任選，這是感受「冠軍水準」最直接的方式。</p>
+        <p style="font-size:0.85rem;color:rgba(200,145,58,0.7);margin-top:1rem;line-height:1.8;">⚠️ 可麗露、甜甜圈冰鎮版均為限量，建議早午時段前往以免向隅。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-logo">HAO COFFEE ROASTER · 豪咖啡</p>
+  <p class="footer-note">台北市松山區八德路四段91巷9號1樓 · (02) 2766-0234 · © 2025 Hao Coffee</p>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => io.observe(el));
+
+  // Menu tabs
+  function switchTab(name, btn) {
+    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.menu-tab').forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    document.getElementById('tab-' + name).classList.add('active');
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+  }
+</script>
+</body>
+</html>
