@@ -149,13 +149,14 @@
     }
 
     /* Scale the reel (267×476 ratio) to cover the viewport */
-    .hero-video-wrap iframe {
+    .hero-video-wrap video {
       /* Make it large enough to fill any viewport */
       width: max(100vw, calc(100vh * 267 / 476));
       height: max(100vh, calc(100vw * 476 / 267));
       min-width: 100%;
       min-height: 100%;
       border: none;
+      object-fit: cover;
       pointer-events: none;
     }
 
@@ -730,14 +731,15 @@
 <!-- HERO — VIDEO BACKGROUND -->
 <section id="hero" aria-label="首頁主視覺">
   <div class="hero-video-wrap" aria-hidden="true">
-    <iframe
-      src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F284110234510804%2F&show_text=false&width=267&t=0&autoplay=1&mute=1"
-      scrolling="no"
-      frameborder="0"
-      allowfullscreen="true"
-      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+    <video
+      src="assets/brocade-hero.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
       title="錦院咖啡形象影片">
-    </iframe>
+    </video>
   </div>
   <div class="hero-overlay"></div>
 
