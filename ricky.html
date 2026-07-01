@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>João Silva — AI Engineer & English Tutor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --surface2: #16161f;
+      --border: rgba(255,255,255,0.07);
+      --accent: #7df3c0;
+      --accent2: #5b8fff;
+      --text: #e8e8f0;
+      --muted: #6b6b80;
+      --font-display: 'Syne', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 15px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* ── GRID BACKGROUND ── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(125,243,192,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(125,243,192,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2.5rem;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 0.45rem 1.1rem;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--accent); color: var(--bg); }
+
+    /* hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s; }
+
+    /* ── SECTIONS ── */
+    section { position: relative; z-index: 1; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 2.5rem 5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(125,243,192,0.25);
+      padding: 0.3rem 0.8rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: blink 1.8s ease-in-out infinite;
+    }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin-bottom: 1.4rem;
+    }
+
+    h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-desc {
+      color: var(--muted);
+      font-size: 0.92rem;
+      max-width: 440px;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      padding: 0.75rem 1.8rem;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 500;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+      letter-spacing: 0.04em;
+    }
+
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 0.75rem 1.8rem;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-ghost:hover { border-color: var(--accent2); color: var(--accent2); }
+
+    /* hero visual */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .avatar-wrap {
+      position: relative;
+      width: 280px;
+      height: 280px;
+    }
+
+    .avatar-ring {
+      position: absolute;
+      inset: -16px;
+      border-radius: 50%;
+      border: 1px solid rgba(125,243,192,0.2);
+      animation: spin 18s linear infinite;
+    }
+
+    .avatar-ring::before {
+      content: '';
+      position: absolute;
+      top: -3px; left: 50%;
+      transform: translateX(-50%);
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      border: 2px solid var(--border);
+    }
+
+    .avatar-placeholder {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--surface2), #1e1e30);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      font-style: normal;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ── SOBRE ── */
+    #sobre {
+      padding: 5rem 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .card:hover {
+      border-color: rgba(125,243,192,0.25);
+      transform: translateY(-3px);
+    }
+
+    .card-icon {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.75;
+    }
+
+    /* ── SERVIÇOS ── */
+    #servicos {
+      padding: 5rem 2.5rem;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .servicos-inner { max-width: 1200px; margin: 0 auto; }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .service-card:hover::before { opacity: 1; }
+    .service-card:hover { border-color: rgba(91,143,255,0.3); }
+
+    .service-num {
+      font-size: 0.7rem;
+      color: var(--accent2);
+      letter-spacing: 0.12em;
+      margin-bottom: 1rem;
+      font-family: var(--font-mono);
+    }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.02em;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.83rem;
+      line-height: 1.75;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+    }
+
+    .tag {
+      font-size: 0.68rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      background: rgba(125,243,192,0.08);
+      color: var(--accent);
+      border: 1px solid rgba(125,243,192,0.15);
+      letter-spacing: 0.05em;
+    }
+
+    .tag.blue {
+      background: rgba(91,143,255,0.08);
+      color: var(--accent2);
+      border-color: rgba(91,143,255,0.15);
+    }
+
+    /* ── EXPERIÊNCIA ── */
+    #experiencia {
+      padding: 5rem 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .timeline {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 160px 1px 1fr;
+      gap: 0 2rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: right;
+      padding-top: 0.2rem;
+      letter-spacing: 0.04em;
+    }
+
+    .timeline-line {
+      background: var(--border);
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .timeline-line::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      left: 50%;
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    .timeline-content h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-content .company {
+      font-size: 0.78rem;
+      color: var(--accent2);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    .timeline-content p {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.75;
+    }
+
+    /* ── TECH STACK ── */
+    #stack {
+      padding: 5rem 2.5rem;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stack-inner { max-width: 1200px; margin: 0 auto; }
+
+    .stack-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2.5rem;
+    }
+
+    .stack-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1.1rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: var(--text);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .stack-pill:hover { border-color: var(--accent); color: var(--accent); }
+
+    .stack-pill .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent2);
+      flex-shrink: 0;
+    }
+
+    /* ── CONTATO ── */
+    #contato {
+      padding: 6rem 2.5rem;
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contato-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contato-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 20%; right: 20%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    .contato-box h2 { margin-bottom: 0.8rem; }
+
+    .contato-box p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 2rem;
+      line-height: 1.75;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer p {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .footer-flag { font-size: 1rem; }
+
+    /* ── GLOW BLOBS ── */
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .blob-1 {
+      width: 500px; height: 500px;
+      background: rgba(125,243,192,0.04);
+      top: -100px; right: -100px;
+    }
+
+    .blob-2 {
+      width: 400px; height: 400px;
+      background: rgba(91,143,255,0.05);
+      bottom: 200px; left: -100px;
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in:nth-child(2) { animation-delay: 0.1s; }
+    .fade-in:nth-child(3) { animation-delay: 0.2s; }
+    .fade-in:nth-child(4) { animation-delay: 0.3s; }
+
+    /* ── RWD ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-visual { order: -1; }
+      .hero-desc { margin: 0 auto 2rem; }
+      .hero-btns { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .sobre-grid { grid-template-columns: 1fr; }
+      .servicos-grid { grid-template-columns: 1fr 1fr; }
+      .timeline-item { grid-template-columns: 90px 1px 1fr; gap: 0 1rem; }
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      #hero { padding: 7rem 1.2rem 4rem; }
+      #sobre, #experiencia { padding: 4rem 1.2rem; }
+      #servicos { padding: 4rem 1.2rem; }
+      #stack { padding: 4rem 1.2rem; }
+      #contato { padding: 4rem 1.2rem; }
+      footer { padding: 1.5rem 1.2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+      .servicos-grid { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 70px 1px 1fr; gap: 0 0.8rem; }
+      .timeline-date { font-size: 0.68rem; }
+      .avatar-wrap { width: 200px; height: 200px; }
+      .contato-box { padding: 2rem 1.5rem; }
+      h1 { font-size: 2.2rem; }
+    }
+
+    /* mobile menu open state */
+    .nav-open .nav-links {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 56px; left: 0; right: 0;
+      background: rgba(10,10,15,0.97);
+      padding: 1.5rem 1.2rem 2rem;
+      border-bottom: 1px solid var(--border);
+      gap: 1.2rem;
+      z-index: 99;
+    }
+
+    .nav-open .nav-cta {
+      display: block;
+      text-align: center;
+      margin: 0 1.2rem;
+      position: fixed;
+      top: calc(56px + 170px); left: 0; right: 0;
+      z-index: 99;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">js<span>.</span>dev</a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#experiencia">Experiência</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a href="#contato" class="nav-cta">Falar Comigo</a>
+    <button class="hamburger" id="menuBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag fade-in">Disponível para novos projetos</div>
+        <h1 class="fade-in">
+          AI Engineer<br/>& <em>English</em><br/>Tutor
+        </h1>
+        <p class="hero-desc fade-in">
+          Olá, sou o João. Construo sistemas de inteligência artificial e ajudo profissionais a dominarem o inglês — com 6 anos de experiência na Europa e uma paixão por tecnologia que transforma.
+        </p>
+        <div class="hero-btns fade-in">
+          <a href="#servicos" class="btn-primary">Ver Serviços</a>
+          <a href="#contato" class="btn-ghost">Entrar em Contato</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">6+</span>
+            <span class="stat-label">Anos na Europa</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">50+</span>
+            <span class="stat-label">Alunos</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">12+</span>
+            <span class="stat-label">Projetos AI</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="avatar-wrap">
+          <div class="avatar-ring"></div>
+          <div class="avatar-placeholder">👤</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="section-header">
+      <p class="section-label">// sobre mim</p>
+      <h2>Tecnologia & Linguagem,<br/>unidos num só perfil.</h2>
+    </div>
+    <div class="sobre-grid">
+      <div class="card">
+        <span class="card-icon">🧠</span>
+        <h3>AI Engineer</h3>
+        <p>
+          Especializado em machine learning, NLP e sistemas de IA de ponta. Trabalhei em equipas de alto desempenho em Portugal, Alemanha e Países Baixos, entregando soluções reais para problemas reais.
+        </p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🇬🇧</span>
+        <h3>English Tutor</h3>
+        <p>
+          Método focado em fluência aplicada — inglês para tech, reuniões, entrevistas e networking internacional. Aulas práticas, personalizadas e 100% online.
+        </p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🌍</span>
+        <h3>6 Anos na Europa</h3>
+        <p>
+          Vivência real em ambientes multiculturais e equipas distribuídas. Essa experiência molda tanto o meu trabalho técnico quanto a forma como ensino a língua inglesa.
+        </p>
+      </div>
+      <div class="card">
+        <span class="card-icon">⚡</span>
+        <h3>Mentalidade Ágil</h3>
+        <p>
+          Combino raciocínio analítico com comunicação clara. Se é um projeto de AI ou uma aula de inglês, o objetivo é sempre o mesmo: resultados mensuráveis.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <div class="servicos-inner">
+      <div class="section-header">
+        <p class="section-label">// serviços</p>
+        <h2>O que posso fazer<br/>por ti.</h2>
+      </div>
+      <div class="servicos-grid">
+        <div class="service-card">
+          <p class="service-num">01 —</p>
+          <h3>Desenvolvimento de IA</h3>
+          <p>Construção de modelos, pipelines de dados e APIs de inteligência artificial para o teu negócio ou produto.</p>
+          <div class="service-tags">
+            <span class="tag">Python</span>
+            <span class="tag">LLMs</span>
+            <span class="tag">MLOps</span>
+          </div>
+        </div>
+        <div class="service-card">
+          <p class="service-num">02 —</p>
+          <h3>Consultoria AI</h3>
+          <p>Avaliação de maturidade, escolha de stack e roadmap para equipas que querem integrar IA de forma estratégica.</p>
+          <div class="service-tags">
+            <span class="tag blue">RAG</span>
+            <span class="tag blue">Fine-tuning</span>
+            <span class="tag blue">Agentes</span>
+          </div>
+        </div>
+        <div class="service-card">
+          <p class="service-num">03 —</p>
+          <h3>Aulas de Inglês</h3>
+          <p>Inglês para profissionais de tecnologia e negócios. Foco em conversação, e-mails, apresentações e entrevistas.</p>
+          <div class="service-tags">
+            <span class="tag">Business English</span>
+            <span class="tag">Tech English</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIA -->
+  <section id="experiencia">
+    <div class="section-header">
+      <p class="section-label">// experiência</p>
+      <h2>Percurso profissional.</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2022 — hoje</div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <h4>Senior AI Engineer</h4>
+          <div class="company">DeepTech NL — Países Baixos</div>
+          <p>Desenvolvimento de sistemas LLM e pipelines de RAG para clientes enterprise no setor financeiro e saúde.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2020 — 2022</div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <h4>ML Engineer</h4>
+          <div class="company">KI Solutions GmbH — Berlim, Alemanha</div>
+          <p>Modelos de NLP para análise de sentimento e classificação de documentos em produção com +1M utilizadores.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2018 — 2020</div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <h4>Data Scientist</h4>
+          <div class="company">Startup Lisboa — Portugal</div>
+          <p>Primeiros passos em ML aplicado. Modelos de recomendação e análise preditiva para e-commerce.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2015 — hoje</div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <h4>English Tutor (freelance)</h4>
+          <div class="company">Online & Presencial</div>
+          <p>Mais de 50 alunos formados, focados em perfis tech e de negócios internacionais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack">
+    <div class="stack-inner">
+      <div class="section-header">
+        <p class="section-label">// tech stack</p>
+        <h2>Ferramentas que uso<br/>no dia a dia.</h2>
+      </div>
+      <div class="stack-grid">
+        <div class="stack-pill"><span class="dot"></span>Python</div>
+        <div class="stack-pill"><span class="dot"></span>PyTorch</div>
+        <div class="stack-pill"><span class="dot"></span>TensorFlow</div>
+        <div class="stack-pill"><span class="dot"></span>LangChain</div>
+        <div class="stack-pill"><span class="dot"></span>OpenAI API</div>
+        <div class="stack-pill"><span class="dot"></span>HuggingFace</div>
+        <div class="stack-pill"><span class="dot"></span>FastAPI</div>
+        <div class="stack-pill"><span class="dot"></span>Docker</div>
+        <div class="stack-pill"><span class="dot"></span>Kubernetes</div>
+        <div class="stack-pill"><span class="dot"></span>AWS / GCP</div>
+        <div class="stack-pill"><span class="dot"></span>PostgreSQL</div>
+        <div class="stack-pill"><span class="dot"></span>Pinecone</div>
+        <div class="stack-pill"><span class="dot"></span>dbt</div>
+        <div class="stack-pill"><span class="dot"></span>MLflow</div>
+        <div class="stack-pill"><span class="dot"></span>Git</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="contato-box">
+      <p class="section-label">// contato</p>
+      <h2>Vamos conversar?</h2>
+      <p>
+        Tens um projeto de AI em mente ou queres melhorar o teu inglês profissional?<br/>
+        Estou disponível para freelance, consultoria e aulas.
+      </p>
+      <a href="mailto:joao@exemplo.com" class="btn-primary" style="display:inline-block;margin-bottom:2rem;">
+        joao@exemplo.com
+      </a>
+      <div class="contact-links">
+        <a href="#" class="contact-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/></svg>
+          LinkedIn
+        </a>
+        <a href="#" class="contact-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="#" class="contact-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Telegram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2024 João Silva. Feito com ☕ em Lisboa.</p>
+    <span class="footer-flag">🇵🇹</span>
+  </footer>
+
+  <script>
+    // mobile menu
+    const btn = document.getElementById('menuBtn');
+    const nav = document.getElementById('navbar');
+    btn.addEventListener('click', () => nav.classList.toggle('nav-open'));
+    document.querySelectorAll('.nav-links a, .nav-cta').forEach(a => {
+      a.addEventListener('click', () => nav.classList.remove('nav-open'));
+    });
+
+    // scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.card, .service-card, .timeline-item, .stack-pill').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
